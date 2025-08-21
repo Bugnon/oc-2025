@@ -8,6 +8,22 @@ Les sujets du cours
 - intelligence artificielle
 - jeu vidéo 3d
 
+# Les participants
+
+* [Maxime](https://github.com/Maxime-syst/oc25_maxime)
+* [François](https://github.com/daglumbussigmaalphamale/oc25_francois)
+* [Alexis](https://github.com/SchAlexis/oc25_Alexis)
+* [Zoé](https://github.com/naozzone/oc25_zoe)
+* [Emma](https://github.com/Emmiche/oc25_emma)
+* [Hanyang](https://github.com/Hanyang-L/oc25_hanyang)
+* [Catia](https://github.com/catiaa24/oc25_catia)
+* [Elouan]()
+* [Olivier]()
+* [Nina]()
+* [Mathieu]()
+
+  
+
 # Exemples dans Markdown
 
 Voici des exemples en Markdown
