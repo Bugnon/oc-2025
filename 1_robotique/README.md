@@ -1,45 +1,37 @@
-# oc-2025
+# Projet robotique
 option complémentaire en informatique du gymnase du Bugnon
 
-Les sujets du cours
+## Description 
 
-- robotique
-- le web
-- intelligence artificielle
-- jeu vidéo 3d
+Dans ce projet nous programmons le robot Kitronik MOVE
 
-# Exemples dans Markdown
+## Partie obligatoire
+Dans ce mini-projet le robot 
 
-Voici des exemples en Markdown
+- commence le parcours à une position A
+- va suivre une ligne
+- va detecter un objet avec le capteur ultrason (position B variable)
+- va tourner de 180°
+- va attraper l'objet avec la pince
+- va ramener l'objet à la positon A
 
-## Code
+## Partie libre
 
-Voici un bout de code qui imprime 10 fois hello
+Vous êtes complêtement libre de faire quelque chose avec le robot
+- une danse
+- un light-show
+- parler faire de la musique
+- être télécommandé
+- etc.
 
-```
-for i in range(10):
-    print('hello')
-```
+## Documentation
 
-## Listes
+Toute la documentation se trouve dans ce fichier README.md
+Vous devez utiliser
 
-Voici une liste
-
-- HTML - contenue de la page web
-- CSS - format de la page web
-- JavaScript - code pour animer la page
-
-## formules mathématiques
-
-Pythagore
-
-$$ a^2 + b^2 = c^2 $$
-
-Einstein 
-
-$$ E = m c^2 $$
-
-## Hyperliens
-
-- [Site web du gymnase](https://www.gymnasedubugnon.ch)
-- [Moode du gymnase](https://mdlgb.ch)
+- 3 niveau de titres
+- liste avec puces et numéroté
+- des examples de code
+- des formules mathématiques
+- des images
+- des hyperliens
