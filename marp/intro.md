@@ -26,7 +26,6 @@ start writing
 
 another way
 
-```
+``` python
 print('hello')
 ```
-
