@@ -1,17 +1,36 @@
+/* Light (300) */
 @font-face {
   font-family: 'JetBrainsMonoNF';
-  src: url('./fonts/JetBrainsMonoNF-Regular.woff') format('woff'), /* path to your woff font */
-       url('./fonts/JetBrainsMonoNF-Regular.ttf') format('truetype'); /* path to your ttf font */
-  src: url('./fonts/JetBrainsMonoNF-Light.woff') format('woff'), /* path to your woff font */
-       url('./fonts/JetBrainsMonoNF-Light.ttf') format('truetype'); /* path to your ttf font */
-  src: url('./fonts/JetBrainsMonoNF-ExtraBold.woff') format('woff'), /* path to your woff font */
-       url('./fonts/JetBrainsMonoNF-ExtraBold.ttf') format('truetype'); /* path to your ttf font */
-  font-weight: normal;
+  src: url('../fonts/JetBrainsMono-Light.woff2') format('woff2'),
+       url('../fonts/JetBrainsMono-Light.ttf') format('truetype');
   font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Regular (400) */
+@font-face {
+  font-family: 'JetBrainsMonoNF';
+  src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+       url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* ExtraBold (800) */
+@font-face {
+  font-family: 'JetBrainsMonoNF';
+  src: url('../fonts/JetBrainsMono-ExtraBold.woff2') format('woff2'),
+       url('../fonts/JetBrainsMono-ExtraBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
 }
 
 body {
-    font-family: 'JetBrainsMonoNF-Light', sans-serif;
+    font-family: 'JetBrainsMonoNF', sans-serif;
+    font-weight: 300;
     color: #eddbb2;
     background-color: rgb(40, 40, 40);
     padding: 10px;
@@ -19,7 +38,8 @@ body {
 }
 
 strong {
-    font-family: 'JetBrainsMonoNF-ExtraBold', 'sans-serif';
+    font-family: 'JetBrainsMonoNF', sans-serif;
+    font-weight: 800;
     text-decoration: underline;
 }
 
