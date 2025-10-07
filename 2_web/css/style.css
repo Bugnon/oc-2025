@@ -19,7 +19,7 @@ body {
 }
 
 strong {
-    font-family: 'JetBrainsMonoNF-ExtraBold';
+    font-family: 'JetBrainsMonoNF-ExtraBold', 'sans-serif';
     text-decoration: underline;
 }
 
