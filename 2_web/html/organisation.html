@@ -2,93 +2,98 @@
 
 <html>
     <head>
-        <title>Cours 0 – Le module web</title>
+        <title>Organisation du module web</title>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
     </head>
 
     <body>
-        <h1>Cours 0 – Introduction au module web</h1>
+        <h1>Organisation du module web</h1>
 
-        <strong>Une seule resource à connaître : <a href="https://bugnon.github.io/oc-2025/2_web/">ocinfweb.github.io</a></strong> 
+        <p>
+            Une seule resource à connaître :<br \>
+            <a href="https://bugnon.github.io/oc-2025/2_web/">https://bugnon.github.io/oc-2025/2_web/</a>
+        </p>
 
 
-        <h2>Devoirs à la maison (28.10.2025)</h2>
+        <div class="important">
+            <h2>Devoirs à la maison (28.10.2025)</h2>
 
-
-        <ul>
-            <li>Créer un repositoire GitHub pour le projet</li>
-            <li>Créer un fichier README.md et y documenter dans les grandes lignes :</li>
             <ul>
-                <li>Le thème choisi</li>
-                <li>Le <a href="html/organisation.html#cahier_des_charges">cahier des charges</a></li>
-                <li>La <a href="html/organisation.html#maquette">maquette du site web</a></li>
+                <li>Créer un repositoire GitHub pour le projet</li>
+                <li>Créer un fichier README.md et y documenter dans les grandes lignes :</li>
+                <ul>
+                    <li>Le thème choisi</li>
+                    <li>Le <a href="#cahier_des_charges">cahier des charges</a></li>
+                    <li>La <a href="#maquette">maquette du site web</a></li>
+                </ul>
+                <li>Créer la <a href="#structure">structure du site web</a> dans le repositoire (dossiers et fichiers HTML vides)</li>
+                <li>Envoyer le lien vers le répositoire à <a href="mailto:raphael.holzer@eduvaud.ch">raphael.holzer@eduvaud.ch</a> et <a href="mailto:denis.dreano@eduvaud.ch">denis.dreano@eduvaud.ch</a></li>
             </ul>
-            <li>Créer la <a href="html/organisation.html#structure">structure du site web</a> dans le repositoire (dossiers et fichiers HTML vides)</li>
-            <li>Envoyer le lien vers le répositoire à <a href="mailto:raphael.holzer@eduvaud.ch">raphael.holzer@eduvaud.ch</a> et <a href="mailto:denis.dreano@eduvaud.ch">denis.dreano@eduvaud.ch</a></li>
-        </ul>
 
-        <h2>Objectifs</h2>
+        </div>
 
-        <ul>
-            <li>Apprendre à créer un site web.</li>
-            <li>Modifier son apparence avec une feuille de style.</li>
-            <li>Utiliser canvas pour créer des animations.</li>
-            <li>Déployer un site web.</li>
-        </ul>
+            <h2 id="objectifs">Objectifs</h2>
 
+            <ul>
+                <li>Apprendre à créer un site web.</li>
+                <li>Modifier son apparence avec une feuille de style.</li>
+                <li>Utiliser canvas pour créer des animations.</li>
+                <li>Déployer un site web.</li>
+            </ul>
+
+   
         <h2>Planning</h2>
 
         <p>
             Le module aura lieu entre les vacances d'automne et de Noël.
-            Un planning détaillé se trouve sur la <a href="index.html">page d'accueil</a> 
+            Un planning détaillé se trouve sur la <a href="../index.html">page d'accueil</a> 
             de ce site.
         </p>
 
-        <h2>Le projet</h2>
+        <h2 id="projet">Le projet</h2>
 
         <p>
             Vous allez créer un site web <strong>individuel</strong>.
             Le site doit avoir un certain nombre de caractéristiques
             qui doivent être documenté dans le 
-            <a href="html/organisation.html#cahier_des_charges">cahier des charges</a> qui
+            <a href="#cahier_des_charges">cahier des charges</a> qui
             doit être validé au début du cours et doit contenir une
-            <a href="html/organisation.html#maquette">maquette</a> du site.
+            <a href="#maquette">maquette</a> du site.
         </p>
 
         <p>
-            Le projet sera évalué durant une <a href="html/organisation.html#présentation">présentation finale</a>
+            Le projet sera évalué durant une <a href="#presentation">présentation finale</a>
             à la fin du module.
         </p>
 
 
-        <h2>Les outils</h2>
+        <h2 id="outils">Les outils</h2>
 
         <p>
             Nous utiliserons les outils suivants durant le module :
             <li>
-                Les macs du gymnase
-            </li>
-            <li>
-                <a href="TODO">VS Code</a> ainsi que l'extension <a href="TODO">HTML Preview</a>
+                <strong>VS Code</strong> ainsi que l'extension <strong>HTML Preview</strong>
                 pour la programmation.
             </li>
             <li>
-                <a href="TODO">Google Chrome</a> et <a href="TODO">Chrome DevTools</a> pour
+                <strong>Google Chrome</strong> et <strong>Chrome DevTools</strong> pour
                 explorer et débugger des sites web. 
             </li>
             <li>
-                <a href="TODO">GitHub</a>, <a href="TODO">GitHub Pages</a> et <a href="TODO">GitHub Desktop</a>
+                <strong>GitHub</strong>, <strong>GitHub Desktop</strong> et
+                <strong>GitHub Pages</strong> 
                 pour héberger le code, le partager et déployer le site web.
             </li>
         </p>
 
-        <h2>Structure d'un site web</h2>
+        <h2 id="structure">Structure d'un site web</h2>
 
         Un site web statique est un dossier qui contient   
 
         <pre>
             <code>
-                |/
-                |_ www/
+                |/c
+                |_ contenu/
                 |     |_cours/
                 |     |      |_cours1.html
                 |     |      |_cours2.html
@@ -114,16 +119,134 @@
             </code>
         </pre>
         
+        <h2 id="maquette">Maquette</h2>
 
+        <p>
+            Une maquette du site est un élément du <a href="cahier des charges">cahier des charges</a>
+            et doit être intégré au fichier <strong>README.md</strong>
+            qui le documente.
+        </p>
+        
+        <p>
+            Une maquette est une représentation graphique du site web
+            envisagé. Il doit donner une idée de l'apparence, de l'organisation
+            du site. Il explicite aussi comment les éléments du cahier des charge
+            vont être intégrés au site web.
+        </p>
 
+        <p>
+            La manière de créer la maquette est libre. 
+            La maquette peut être un diagramme réalisé avec papier et
+            crayon et/ou collage, ou alors avec un logiciel (PowerPoint,
+            outil graphique, Paint, etc.).
+        </p>
+        
 
-        o	Explication des objectifs du module, de son organisation, des ressources, du projet certificatif et de son évaluation ;
-o	Présentation des technologies enseignées et des outils de développement VS Code et Chrome DevTools.
-o	Structure d’un projet web.
-o	Comment faire un storyboard ;
-o	Comment choisir le thème du site web.
+        <h2 id="theme">Thèmes du site web</h2>
 
+        <p>
+            Le thème est laissé au libre choix de l'élève, du moment
+            qu'on peut intégrer les éléments imposés du 
+            <a href="#cahier_des_charge">cahier des charges</a> de manière
+            pertinente. On recommande un sujet
+            sur lequel l'élève est à l'aise, par exemple :
 
+            <ul>
+                <li>Sujet du travail de maturité ;</li>
+                <li>Cours intéressant de gymnase ;</li>
+                <li>Autre intérêt lié à l'informatique, les sciences, mathématiques ou technologies ;</li>
+                <li>etc.</li>
+            </ul>
+        </p>
+
+        <h2 id="presentation">Présentation finale</h2>
+
+        <p>
+            La présentation finale certificative à lieu sur les trois ou quatre dernières périodes de la séquence. 
+            Le tirage de l’ordre de passage se fera par tirage au sort. 
+            Tous les élèves doivent être présents pour écouter les présentations de leurs pairs.
+        </p>
+        
+        <p>
+            Pour chaque passage il y aura 7 minute de présentation
+            et 5 minutes de questions.
+        </p>
+
+        <ul>
+            <li><strong>Présentation (7 minutes)</strong></li>
+            <ul>
+                <li>Une présentation du cahier des charge et du thème choisi ;</li>
+                <li>Une présentation du site web construit;</li>
+                <li>Une exploration technique du code : HTML, CSS, animation canvas et autres éléments JS à l’aide de Chrome DevTools ;</li>
+                <li>Une démonstration de l’adaptation faite pour les mobiles ;</li>
+                <li>Une discussion des difficultés rencontrée et sur les solutions et adaptations choisies.</li>
+            </ul>
+            <li><strong>Questions (5 minutes)</strong></li>
+            <ul>
+                <li>Questions sur le sujet du site et l’implémentation ;</li>
+                <li>Questions de connaissance sur les technologies utilisée ;</li>
+                <li>Questions libres des autres élèves.</li>
+            </ul>
+        </ul>
+
+        <h2 id="evaluation">Critères d'évaluation</h2>
+
+        <p>
+            L'évaluation sera basée sur le site web produit et la
+            présentation finale et la note se basera sur les
+            critères suivants :
+        </p>
+
+        <ul>
+            <li>Respect du cahier des charges ;</li>
+         	<li>Clarté de la présentation finale et des réponses aux questions ;</li>
+         	<li>Pertinence, cohérence et maîtrise du contenu ;</li>
+        	<li>Structure et esthétique du site ;</li>
+            <li>Maîtrise des technologies employées</li>.
+        </ul>
+
+        <h2 id="cahier_des_charges">Cahier des charges</h2>
+
+        <p>
+            Le cahier des charge décrit à quoi le site
+            doit ressembler en terme de contenu, style et organisation.
+            Le cahier des charges doit être proposé par l'élève
+            avant le <strong>28 octobre 2025</strong>.
+        </p>
+
+        <p>
+            Le cahier des charge doit être documenté dans
+            le fichier <strong>README.md</strong> à la
+            base du du dossier du projet web. Il doit
+            impérativement comprendre une <a href="#maquette">maquette</a> du
+            site web.
+        </p>
+
+        <p>
+            Le cahier des charge comprend des <strong>éléments imposés</strong> :
+            <ul>
+                <li>Le site web doit contenir au minimum quatre pages dans quatre fichiers HTML différents, dont une page d’accueil.</li>
+                <li>La page d’accueil doit présenter le sujet traiter et offrir au visiteur une table des matières du site web avec un lien vers les pages correspondantes et une brève description du contenu.</li>
+                <li>Il doit y avoir une barre de navigation pour naviguer entre les quatre pages.</li>
+                <li>Chaque page doit contenir au moins 100 mots.</li>
+                <li>Le sujet traité doit être liés aux STIM et le contenu (texte, images, équations, code, animations, etc.) doit être cohérent, pertinent et maîtrisé par l’élève.</li>
+                <li>La page web doit contenir soit des équations, soit du code informatique, soit un formulaire dynamique.</li>
+                <li>Le site web doit être stylé avec une feuille CSS.</li>
+                <li>Il doit y avoir une animation réalisée avec canvas. (voir des accueil))
+                </li>
+                <li>Le code doit être sur GitHub est être déployé sur le web avec GitHub Pages.</li>
+                <li>La page doit pouvoir s’adapter aux petits écrans (smartphone).</li>
+            </ul>
+        </p>
+
+        <p>
+            Voici les éléments du cahier des charge qui doivent être <strong>proposés par l'élève</strong> :
+            <ul>
+                <li>Le sujet traité et le contenu du site web ;</li>
+                <li>L'apparence (ou style) du site web ;</li>
+                <li>La structure du site web.</li>
+            </ul>
+        </p>
 
     </body>
 </html>

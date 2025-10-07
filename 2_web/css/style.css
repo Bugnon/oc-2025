@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'JetBrainsMonoNF';
+  src: url('./fonts/JetBrainsMonoNF-Regular.woff') format('woff'), /* path to your woff font */
+       url('./fonts/JetBrainsMonoNF-Regular.ttf') format('truetype'); /* path to your ttf font */
+  src: url('./fonts/JetBrainsMonoNF-Light.woff') format('woff'), /* path to your woff font */
+       url('./fonts/JetBrainsMonoNF-Light.ttf') format('truetype'); /* path to your ttf font */
+  src: url('./fonts/JetBrainsMonoNF-ExtraBold.woff') format('woff'), /* path to your woff font */
+       url('./fonts/JetBrainsMonoNF-ExtraBold.ttf') format('truetype'); /* path to your ttf font */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: 'JetBrainsMonoNF-Light', sans-serif;
+    color: #eddbb2;
+    background-color: rgb(40, 40, 40);
+    padding: 10px;
+    font-size: 14px;
+}
+
+strong {
+    font-family: 'JetBrainsMonoNF-ExtraBold';
+    text-decoration: underline;
+}
+
+h1, h2 {
+    color: rgb(135, 160, 153);
+    padding: inherit;
+}
+
+h1 {
+    background-color: DarkCyan;
+}
+
+h2 {
+    border-bottom: 1px solid #665544;
+}
+
+.important {
+    background-color: #cc241d;
+    border: 1px solid #665544;
+    padding: inherit;
+}
+
+.important > h2 {
+    background-color: #cc241d;
+}
+
+a {
+    color: #83a598;
+}
