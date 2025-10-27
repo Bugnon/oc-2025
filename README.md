@@ -26,10 +26,10 @@ Chaque participant a créé un répositoire au nom `oc25_prenom`
 
 ## Le projet robotique
 
-* [Alexis + Elouan](https://github.com/SchAlexis/oc25_Alexis/blob/main/1_Robotique))
-* [Olivier + Catia](https://github.com/Olivier4508/oc25_olivier/blob/main/1_robotique)
-* [François + Hanyang + Maxime](https://github.com/daglumbussigmaalphamale/oc25_francois/blob/main/1_robotique)
-* [Mathieu + Nina](https://github.com/Bugnon/oc-2025/tree/main/1_robotique)
+* [Alexis + Elouan](https://github.com/SchAlexis/oc25_Alexis/tree/main/1_Robotique)
+* [Olivier + Catia](https://github.com/Olivier4508/oc25_olivier/tree/main/1_robotique)
+* [François + Hanyang + Maxime](https://github.com/daglumbussigmaalphamale/oc25_francois/tree/main/1_robotique)
+* [Mathieu + Nina](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/1_robotique)
 * [Zoé + Emma](https://github.com/naozzone/oc25_zoe/tree/main/1_robotique) 
 
 # Exemples dans Markdown
