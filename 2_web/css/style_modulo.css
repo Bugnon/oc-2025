@@ -1,0 +1,31 @@
+body {font-family: Arial;}
+
+h1, h2, h3, h4  {
+    color: blueviolet;
+}
+
+#bienvenue {
+    border: 1px solid blueviolet;
+    background-color: lavenderblush;
+    padding: 10px;
+    margin: 30px;
+    color: blueviolet;
+}   
+
+.important {
+    border: 1px solid blueviolet;
+    background-color: lavender;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+.important > strong {   
+    color: blueviolet;
+    text-decoration: underline solid;
+}   
+
+p   {
+    color: darkslateblue;
+    padding: 10px;
+    border-radius: 10px;
+}
