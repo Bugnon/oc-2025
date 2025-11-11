@@ -23,7 +23,7 @@ head            body
 */
 
 console.log(document.getElementById('bienvenue').textContent);
-document.getElementById('bienvenue').textContent = 'Bienvenue sur ma super page web !';
+
 
 function ajouter_perso() {
     var nom = 'Jean Dupont';
