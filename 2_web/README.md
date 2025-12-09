@@ -6,7 +6,7 @@
 * Olivier [Site](https://olivier4508.github.io/oc25_olivier/2_web/index.html) [Repo](https://github.com/Olivier4508/oc25_olivier/tree/main/2_web)
 * Nina [Site]() [Repo](https://github.com/NiMakeF/oc25_nina/tree/main/web)
 * Catia [Site](https://catiaa24.github.io/oc25_catia/2_web/index.html) [Repo](https://github.com/catiaa24/oc25_catia/tree/main/2_web)
-* Mathieu [Site](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/2_web_exemple) [Repo](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/2_web)
+* Mathieu [Site](https://mathieujonin-hash.github.io/oc25_mathieu/index.html) [Repo](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/2_web)
 * François [Site](https://daglumbussigmaalphamale.github.io/moduleweb/) [Repo](https://github.com/daglumbussigmaalphamale/moduleweb)
 * Han Yang [Site](https://hanyang-l.github.io/oc25_hanyang/2_web/telechargement.html) [Repo](https://github.com/Hanyang-L/oc25_hanyang/tree/main/2_web)
 * Maxime [Site](https://maxime-syst.github.io/oc25_maxime/2_web2/accueil.html) [Repo](https://github.com/Maxime-syst/oc25_maxime/tree/main/2_web)
