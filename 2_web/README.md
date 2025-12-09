@@ -2,20 +2,17 @@
 
 ## Sites Web
 
-* Elouan [Site]() [Repo]()
-* Olivier [Site]() [Repo]()
-* Nina [Site]() [Repo]()
-* Catia [Site]() [Repo]()
-* Mathieu [Site]() [Repo]()
-* François [Site]() [Repo]()
-* Han Yang [Site]() [Repo]()
-* Maxime [Site]() [Repo]()
-* Zoé [Site]() [Repo]()
-* Emma [Site]() [Repo]()
+* Elouan [Site]() [Repo](https://github.com/Elouan7/oc25_elouan/tree/main/2_web)
+* Olivier [Site]() [Repo](https://github.com/Olivier4508/oc25_olivier/tree/main/2_web)
+* Nina [Site]() [Repo](https://github.com/NiMakeF/oc25_nina/tree/main/web)
+* Catia [Site]() [Repo](https://github.com/catiaa24/oc25_catia/tree/main/2_web)
+* Mathieu [Site]() [Repo](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/2_web)
+* François [Site]() [Repo](https://github.com/daglumbussigmaalphamale/moduleweb)
+* Han Yang [Site]() [Repo](https://github.com/Hanyang-L/oc25_hanyang/tree/main/2_web)
+* Maxime [Site]() [Repo](https://github.com/Maxime-syst/oc25_maxime/tree/main/2_web)
+* Zoé [Site]() [Repo](https://github.com/naozzone/oc25_zoe/tree/main/2_web)
+* Emma [Site]() [Repo](https://github.com/Emmiche/oc25_emma/tree/main/Info_web2)
 * Alexis [Site]() [Repo](https://github.com/SchAlexis/oc25_Alexis/tree/main/2_Web)
-
-
-* [Olivier](https://olivier4508.github.io/oc25_olivier/2_web/index.html)
 
 
 
