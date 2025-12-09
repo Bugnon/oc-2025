@@ -5,14 +5,14 @@
 * Elouan [Site]() [Repo](https://github.com/Elouan7/oc25_elouan/tree/main/2_web)
 * Olivier [Site]() [Repo](https://github.com/Olivier4508/oc25_olivier/tree/main/2_web)
 * Nina [Site]() [Repo](https://github.com/NiMakeF/oc25_nina/tree/main/web)
-* Catia [Site]() [Repo](https://github.com/catiaa24/oc25_catia/tree/main/2_web)
-* Mathieu [Site]() [Repo](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/2_web)
-* François [Site]() [Repo](https://github.com/daglumbussigmaalphamale/moduleweb)
+* Catia [Site](https://catiaa24.github.io/oc25_catia/2_web/index.html) [Repo](https://github.com/catiaa24/oc25_catia/tree/main/2_web)
+* Mathieu [Site]() [Repo](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/2_web) [Site](https://maxime-syst.github.io/oc25_maxime/2_web2/accueil.html)
+* François [Site](https://daglumbussigmaalphamale.github.io/moduleweb/) [Repo](https://github.com/daglumbussigmaalphamale/moduleweb)
 * Han Yang [Site]() [Repo](https://github.com/Hanyang-L/oc25_hanyang/tree/main/2_web)
 * Maxime [Site]() [Repo](https://github.com/Maxime-syst/oc25_maxime/tree/main/2_web)
 * Zoé [Site]() [Repo](https://github.com/naozzone/oc25_zoe/tree/main/2_web)
-* Emma [Site]() [Repo](https://github.com/Emmiche/oc25_emma/tree/main/Info_web2)
-* Alexis [Site]() [Repo](https://github.com/SchAlexis/oc25_Alexis/tree/main/2_Web)
+* Emma [Site](https://emmiche.github.io/oc25_emma/Info_web2/) [Repo](https://github.com/Emmiche/oc25_emma/tree/main/Info_web2)
+* Alexis [Site](https://schalexis.github.io/oc25_Alexis/2_Web/EldenRing_Main.html) [Repo](https://github.com/SchAlexis/oc25_Alexis/tree/main/2_Web)
 
 
 
