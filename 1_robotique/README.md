@@ -1,15 +1,16 @@
 # Projet robotique
+
 option complémentaire en informatique du gymnase du Bugnon
 
-## Description 
+## Description
 
 Dans ce projet nous programmons le robot Kitronik MOVE
 
-![](images/robot.jpeg)
+![kitronik move robot](images/robot.jpeg)
 
 ## Partie obligatoire
 
-Dans ce mini-projet le robot 
+Dans ce mini-projet le robot
 
 - commence le parcours à une position A
 - va suivre une ligne
@@ -21,6 +22,7 @@ Dans ce mini-projet le robot
 ## Partie libre
 
 Vous êtes complètement libre de faire quelque chose avec le robot
+
 - une danse
 - un light-show
 - parler faire de la musique
