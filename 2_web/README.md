@@ -1,45 +1,28 @@
-# oc-2025
-option complémentaire en informatique du gymnase du Bugnon
+# Module web
 
-Les sujets du cours
+## Sites Web
 
-- robotique
-- le web
-- intelligence artificielle
-- jeu vidéo 3d
+* Elouan [Site]() [Repo](https://github.com/Elouan7/oc25_elouan/tree/main/2_web)
+* Olivier [Site](https://olivier4508.github.io/oc25_olivier/2_web/index.html) [Repo](https://github.com/Olivier4508/oc25_olivier/tree/main/2_web)
+* Nina [Site](https://nimakef.github.io/oc25_nina/web/pageAcueuil.html) [Repo](https://github.com/NiMakeF/oc25_nina/tree/main/web)
+* Catia [Site](https://catiaa24.github.io/oc25_catia/2_web/index.html) [Repo](https://github.com/catiaa24/oc25_catia/tree/main/2_web)
+* Mathieu [Site](https://mathieujonin-hash.github.io/oc25_mathieu/index.html) [Repo](https://github.com/mathieujonin-hash/oc25_mathieu/tree/main/2_web)
+* François [Site](https://daglumbussigmaalphamale.github.io/moduleweb/) [Repo](https://github.com/daglumbussigmaalphamale/moduleweb)
+* Han Yang [Site](https://hanyang-l.github.io/oc25_hanyang/2_web/telechargement.html) [Repo](https://github.com/Hanyang-L/oc25_hanyang/tree/main/2_web)
+* Maxime [Site](https://maxime-syst.github.io/oc25_maxime/2_web2/accueil.html) [Repo](https://github.com/Maxime-syst/oc25_maxime/tree/main/2_web)
+* Zoé [Site](https://naozzone.github.io/oc25_zoe/2_web/index.html) [Repo](https://github.com/naozzone/oc25_zoe/tree/main/2_web)
+* Emma [Site](https://emmiche.github.io/oc25_emma/Info_web2/) [Repo](https://github.com/Emmiche/oc25_emma/tree/main/Info_web2)
+* Alexis [Site](https://schalexis.github.io/oc25_Alexis/2_Web/EldenRing_Main.html) [Repo](https://github.com/SchAlexis/oc25_Alexis/tree/main/2_Web)
 
-# Exemples dans Markdown
 
-Voici des exemples en Markdown
 
-## Code
+## Planning prévisionnel
 
-Voici un bout de code qui imprime 10 fois hello
+<img width="1254" height="133" alt="image" src="https://github.com/user-attachments/assets/623b7379-b708-409e-bef8-c8271ec0f379" />
+	
 
-```
-for i in range(10):
-    print('hello')
-```
 
-## Listes
 
-Voici une liste
+## Critère d'évaluation
 
-- HTML - contenue de la page web
-- CSS - format de la page web
-- JavaScript - code pour animer la page
-
-## formules mathématiques
-
-Pythagore
-
-$$ a^2 + b^2 = c^2 $$
-
-Einstein 
-
-$$ E = m c^2 $$
-
-## Hyperliens
-
-- [Site web du gymnase](https://www.gymnasedubugnon.ch)
-- [Moode du gymnase](https://mdlgb.ch)
+<img width="1081" height="565" alt="image" src="https://github.com/user-attachments/assets/ec469edf-aa70-46d8-b801-be1f9bac0078" />

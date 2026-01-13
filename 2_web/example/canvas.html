@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Drawing on the canvas</h1>
+The canvas element is used to draw graphics on a web page. Here is an example of a canvas with some drawings:
+
+<pre>
+beginPath()
+moveTo(x, y)
+lineTo(x, y)
+
+arc(x, y, radius, startAngle, endAngle)
+bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+quadraticCurveTo(cpx, cpy, x, y)
+
+fill()
+stroke()
+
+fillRect(x, y, width, height)
+strokeRect(x, y, width, height)
+clearRect(x, y, width, height)
+
+
+</pre>
+
+
+<h2>Example</h2>
+<canvas id="canvas1" width="400" height="200" style="border:1px solid #000000;"></canvas>
+
+<script>
+    var canvas = document.getElementById('canvas1');
+    var ctx = canvas.getContext('2d');
+
+    // Draw a rectangle
+    
+    ctx.rotate(0.1);
+    ctx.fillStyle = 'magenta';
+    ctx.fillRect(20, 20, 150, 100);
+
+    ctx.fillStyle = 'yellow';
+    ctx.fillRect(50, 50, 150, 100);
+
+    // Draw a circle
+    ctx.beginPath();
+    ctx.arc(300, 70, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = '#8000FF';
+    ctx.fill();
+    ctx.stroke();
+
+    // Draw a line
+    ctx.beginPath();
+    ctx.moveTo(50, 160);
+    ctx.lineTo(350, 160);
+    ctx.strokeStyle = '#00FF00';
+    ctx.lineWidth = 5;
+    ctx.stroke();
+</script>   
+
+<h2> Creating a canvas dynamically</h2>
+A canvas can also be created dynamically using JavaScript:
+<br>
+<script>
+    const canvas2 = document.createElement("canvas");
+    canvas2.width = 400;
+    canvas2.height = 200;
+    canvas2.style.border = "1px solid #000000";
+
+    document.body.appendChild(canvas2);
+    var ctx = canvas2.getContext("2d");
+    ctx.fillStyle = "red";
+    ctx.fillRect(20, 20, 150, 100);
+    ctx.stroke()
+
+    ctx.font = "50px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("dynamic canvas",20,180);
+
+</script>
+
+<h2>Curves</h2>
+A canvas can also be used to draw curves:
+<br>
+<canvas id="canvas3" width="400" height="200" style="border:1px solid #000000;"></canvas>
+<script>
+    var canvas3 = document.getElementById('canvas3');
+    var ctx = canvas3.getContext('2d');
+
+    // Draw a Bezier curve
+    ctx.beginPath();
+    ctx.moveTo(20, 60);
+    ctx.bezierCurveTo(250, 50, 250, 250, 350, 150);
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 5;
+    ctx.stroke();
+
+    ctx.font = "50px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Bezier Curve",20,50);
+</script>
+
+<h2>Gradient</h2>
+A gradient is a gradual blend between multiple colors. Here is an example of a linear gradient:
+<br>
+<canvas id="canvas4" width="400" height="200" style="border:1px solid #000000;"></canvas>
+<script>
+    var canvas4 = document.getElementById('canvas4');
+    var ctx = canvas4.getContext('2d');
+
+    // Create gradient
+    var gradient = ctx.createLinearGradient(0, 0, canvas4.width, 0);
+    gradient.addColorStop(0, 'lightblue');
+    gradient.addColorStop(0.5, "purple");
+    gradient.addColorStop(1, 'darkblue');
+
+    // Fill with gradient
+    ctx.fillStyle = gradient;
+    ctx.fillRect(10, 10, canvas4.width-20, canvas4.height-20);
+
+    ctx.font = "50px Arial";
+    ctx.fillStyle = "white";
+    ctx.fillText("Linear Gradient",20,80);
+</script>
+
+<h2>Shadows</h2>
+Shadows can be added to shapes and text to create depth and emphasis.
+<br>
+<canvas id="canvas5" width="400" height="200" style="border:1px solid #000000;"></canvas>
+<script>
+    var canvas5 = document.getElementById('canvas5');
+    var ctx = canvas5.getContext('2d');
+
+    // Set shadow properties
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+    ctx.shadowBlur = 5;
+    ctx.shadowOffsetX = 5;
+    ctx.shadowOffsetY = 5;
+
+    // Draw rectangle with shadow
+    ctx.fillStyle = 'orange';
+    ctx.fillRect(50, 70, 150, 100);
+    
+    ctx.font = "50px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Shadow Effect",20,50);
+</script>
+
+<h2>Images</h2>
+<canvas id="canvas6" width="400" height="250" style="border:1px solid black"></canvas>
+
+<script>
+    var canvas6 = document.getElementById('canvas6');
+    var ctx = canvas6.getContext('2d');
+
+    var img = new Image();
+    img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png';
+    img.onload = function() {
+        ctx.drawImage(img, 100, 20, 200, 200);
+    };
+</script>
+
+<h2>Clock</h2>
+<canvas id="canvas7" width="400" height="400" style="border:1px solid black"></canvas>
+<script>
+    const canvas = document.getElementById('canvas7');
+    const ctx = canvas.getContext('2d');
+    let radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.90
+    drawClock();
+
+    function drawClock() {
+        ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = 'pink';
+        ctx.fill();
+    }
+</script>
+</body>
+</html>
