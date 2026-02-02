@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://y5jxhlagh1sf"]
+
+[ext_resource type="PackedScene" uid="uid://v6copa7ehrc0" path="res://lamp.tscn" id="1_as284"]
+[ext_resource type="PackedScene" uid="uid://dur38y1c06871" path="res://bookshelf.tscn" id="2_qjncg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3qwd"]
+albedo_color = Color(0.16862746, 0.69803923, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i25js"]
+albedo_color = Color(1, 0.32941177, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_py5gm"]
+albedo_color = Color(0.90588236, 0.36862746, 0.92156863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7s1a"]
+albedo_color = Color(0.54901963, 0.8980392, 0.42745098, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d0og"]
+albedo_color = Color(1, 1, 0.03529412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_side2"]
+albedo_color = Color(0.36862746, 0.8509804, 0.36862746, 1)
+
+[node name="ex3" type="Node3D" unique_id=1915571340]
+
+[node name="Room" type="CSGBox3D" parent="." unique_id=1216917807]
+flip_faces = true
+size = Vector3(10, 10, 10)
+
+[node name="Table" type="CSGCombiner3D" parent="." unique_id=2141328675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.337158, 0, 0.9135132)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table" unique_id=2016602202]
+size = Vector3(4, 0.1, 2)
+material = SubResource("StandardMaterial3D_l3qwd")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Table/CSGBox3D" unique_id=1807617743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 1)
+radius = 0.1
+material = SubResource("StandardMaterial3D_l3qwd")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Table/CSGBox3D" unique_id=755752581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -1)
+radius = 0.1
+material = SubResource("StandardMaterial3D_l3qwd")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Table/CSGBox3D" unique_id=309762329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, 1)
+radius = 0.1
+material = SubResource("StandardMaterial3D_l3qwd")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Table/CSGBox3D" unique_id=533879084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -1)
+radius = 0.1
+material = SubResource("StandardMaterial3D_l3qwd")
+
+[node name="Bed" type="CSGCombiner3D" parent="." unique_id=321049227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.9343262, -3.7716675)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bed" unique_id=968586677]
+size = Vector3(4, 1, 2)
+material = SubResource("StandardMaterial3D_i25js")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bed" unique_id=739652622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+size = Vector3(3.8, 0.5, 1.8)
+material = SubResource("StandardMaterial3D_py5gm")
+
+[node name="Pillow" type="CSGCombiner3D" parent="Bed" unique_id=2113462997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3128662, 0.8, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Bed/Pillow" unique_id=2001777856]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+material = SubResource("StandardMaterial3D_b7s1a")
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Bed/Pillow/CSGSphere3D" unique_id=1885732689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+material = SubResource("StandardMaterial3D_b7s1a")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Bed/Pillow/CSGSphere3D/CSGSphere3D3" unique_id=322667988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+material = SubResource("StandardMaterial3D_b7s1a")
+
+[node name="Lamp" parent="." unique_id=1352199140 instance=ExtResource("1_as284")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5913086, -4.452942, 2.972351)
+
+[node name="Lamp2" parent="." unique_id=1818679320 instance=ExtResource("1_as284")]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 2.2044678, -4.4642944, 0)
+material_override = SubResource("StandardMaterial3D_1d0og")
+
+[node name="Bookshelf" parent="." unique_id=1246263949 instance=ExtResource("2_qjncg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4882813, -3.98938, 0)
+
+[node name="Bookshelf2" parent="." unique_id=2040681395 instance=ExtResource("2_qjncg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4907227, 0, 1.0743408)
+material_override = SubResource("StandardMaterial3D_side2")

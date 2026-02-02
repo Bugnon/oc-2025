@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dur38y1c06871"]
+
+[node name="Bookshelf" type="CSGCombiner3D" unique_id=1246263949]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=306501805]
+size = Vector3(1, 2, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=1751075681]
+operation = 2
+size = Vector3(1, 1.8, 1.8)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=702177225]
+size = Vector3(1, 0.1, 2)
