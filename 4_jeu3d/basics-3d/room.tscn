@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqkqfq2cuwwk2"]
+
+[ext_resource type="PackedScene" uid="uid://bkn4e7c71lxx6" path="res://lamp.tscn" id="1_88gup"]
+
+[node name="Room" type="Node3D"]
+
+[node name="Bed" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6471252, 1.0367432, -2.783081)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bed"]
+size = Vector3(1.8828125, 0.09863281, 0.8876953)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bed/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30413818, 0)
+size = Vector3(2, 0.5, 1)
+
+[node name="Pillow" type="CSGCombiner3D" parent="Bed"]
+operation = 2
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Bed/Pillow"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.66748047, 0.5444946, -0.50720215)
+
+[node name="Walls" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+flip_faces = true
+size = Vector3(10, 10, 10)
+
+[node name="Table" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6471252, 1.0367432, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table"]
+size = Vector3(2, 0.1, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.882205, -0.54071045, 0.37512207)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8790207, -0.5492165, -0.38809288)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8746605, -0.54071045, 0.37512207)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8778448, -0.5492165, -0.38809288)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="Lamp" parent="." instance=ExtResource("1_88gup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.361969, 3.6495972)
+
+[node name="Lamp2" parent="." instance=ExtResource("1_88gup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -4)

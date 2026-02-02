@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bekhohiicyomh"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_5p85f"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.105882354, 0.18039216, 1)
+
+[node name="CSG" type="Node3D"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1650085, 0, 0)
+material = SubResource("ORMMaterial3D_5p85f")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002380371, 0, 0)
+operation = 2
+radius = 0.6170241
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material = SubResource("ORMMaterial3D_5p85f")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002380371, 0, 0)
+operation = 2
+radius = 0.6170241

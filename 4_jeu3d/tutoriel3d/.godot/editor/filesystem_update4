@@ -1,9 +1,2 @@
-res://main.tscn
-res://player.tscn
-res://main.gd
-res://player.gd
-res://mob.gd
-res://mob.tscn
-res://score_label.gd
-res://music_player.tscn
 res://default_bus_layout.tres
+res://mob.tscn
