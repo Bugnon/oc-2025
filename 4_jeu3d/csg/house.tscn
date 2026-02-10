@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cgxl5uxknx3ka"]
+
+[ext_resource type="PackedScene" uid="uid://c1p7haw52ar7k" path="res://room.tscn" id="1_hfkix"]
+[ext_resource type="PackedScene" uid="uid://dur38y1c06871" path="res://bookshelf.tscn" id="2_vy7fe"]
+[ext_resource type="PackedScene" uid="uid://ckhj22e850nm4" path="res://bed.tscn" id="3_10qhy"]
+[ext_resource type="PackedScene" uid="uid://v6copa7ehrc0" path="res://lamp.tscn" id="4_2y50f"]
+[ext_resource type="PackedScene" uid="uid://cq13pi6hpwlf" path="res://table.tscn" id="5_obbqb"]
+
+[node name="House" type="Node3D" unique_id=591534687]
+
+[node name="Room" parent="." unique_id=452911471 instance=ExtResource("1_hfkix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68811035, 0, -12.911743)
+
+[node name="Bookshelf" parent="Room" unique_id=1814720863 instance=ExtResource("2_vy7fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9381104, 1.25, 2.1617432)
+
+[node name="Bed" parent="Room" unique_id=2115695303 instance=ExtResource("3_10qhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6565552, -3.9933472, -2.8599854)
+
+[node name="Lamp" parent="Room" unique_id=848903323 instance=ExtResource("4_2y50f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0905151, -4.0273438, -2.9719238)
+
+[node name="Table" parent="Room" unique_id=944008672 instance=ExtResource("5_obbqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.791687, -2.4449463, 3.3582764)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Room" unique_id=1484097235]
+transform = Transform3D(2.9569097e-08, -0.49999988, 0.8660255, -0.8660254, 0.43301266, 0.24999994, -0.49999997, -0.75, -0.4330126, 14.5, 14, 2.5)
+visible = false
+shadow_enabled = true
+
+[node name="Room2" parent="Room" unique_id=2102042840 instance=ExtResource("1_hfkix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Bookshelf" parent="Room/Room2" unique_id=409828320 instance=ExtResource("2_vy7fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9381104, 1.25, 2.1617432)
+
+[node name="Bed" parent="Room/Room2" unique_id=814957632 instance=ExtResource("3_10qhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6565552, -3.9933472, -2.8599854)
+
+[node name="Lamp" parent="Room/Room2" unique_id=99864827 instance=ExtResource("4_2y50f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0905151, -4.0273438, -2.9719238)
+
+[node name="Table" parent="Room/Room2" unique_id=507672097 instance=ExtResource("5_obbqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.791687, -2.4449463, 3.3582764)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Room2" unique_id=187591019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2.25, -3)
+light_color = Color(1, 0.4509804, 0.2901961, 1)
+light_energy = 1.158
+shadow_enabled = true
+omni_range = 5.429
+omni_attenuation = 0.406
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Room" unique_id=633055165]
+transform = Transform3D(0.22414409, -0.9744444, 0.014754481, -0.12940958, -0.014754662, 0.9914815, -0.9659258, -0.22414409, -0.1294096, -3, 0.75, -3.25)
+light_color = Color(1, 1, 0.39215687, 1)
+light_energy = 6.386
+spot_range = 15.838
