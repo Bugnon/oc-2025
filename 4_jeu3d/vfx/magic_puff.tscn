@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://niol7jkeiv5x"]
+
+[ext_resource type="Texture2D" uid="uid://cvednxl3wiuv0" path="res://particles/alpha/flame_01_a.png" id="1_1381y"]
+
+[sub_resource type="Curve" id="Curve_vb8jt"]
+_data = [Vector2(0.0053191483, 0), 0.0, 0.0, 0, 0, Vector2(0.088652484, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_13uak"]
+curve = SubResource("Curve_vb8jt")
+
+[sub_resource type="Curve" id="Curve_makga"]
+_data = [Vector2(0.017730497, 0.5094339), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gq53a"]
+curve = SubResource("Curve_makga")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uo4pb"]
+lifetime_randomness = 0.3
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0.3, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_gq53a")
+alpha_curve = SubResource("CurveTexture_13uak")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt2pc"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9882353, 0.43137255, 0.43137255, 1)
+albedo_texture = ExtResource("1_1381y")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_sljeo"]
+material = SubResource("StandardMaterial3D_tt2pc")
+
+[sub_resource type="Curve" id="Curve_qlwhg"]
+_data = [Vector2(0.0053191483, 0), 0.0, 0.0, 0, 0, Vector2(0.088652484, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_e80vk"]
+curve = SubResource("Curve_qlwhg")
+
+[sub_resource type="Curve" id="Curve_nkk5x"]
+_data = [Vector2(0.017730497, 0.5094339), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5odku"]
+curve = SubResource("Curve_nkk5x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aoruj"]
+lifetime_randomness = 0.3
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 1, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_5odku")
+alpha_curve = SubResource("CurveTexture_e80vk")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2x7lx"]
+load_path = "res://.godot/imported/smoke_01_a.png-b5df4d4254bfcedd43708d5918e5e29e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3utx"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9871579, 0.86155593, 0.9244641, 1)
+albedo_texture = SubResource("CompressedTexture2D_2x7lx")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_wse2e"]
+material = SubResource("StandardMaterial3D_m3utx")
+
+[node name="MagicPuff" type="Node3D" unique_id=1646611421]
+
+[node name="Fire" type="GPUParticles3D" parent="." unique_id=1946106906]
+amount = 80
+lifetime = 2.0
+speed_scale = 0.5
+explosiveness = 0.12
+randomness = 0.39
+visibility_aabb = AABB(-5.5222173, -6.125435, -5.000704, 10.929419, 10.339002, 10.0856495)
+process_material = SubResource("ParticleProcessMaterial_uo4pb")
+draw_pass_1 = SubResource("QuadMesh_sljeo")
+
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=2084598621]
+amount = 80
+lifetime = 2.0
+speed_scale = 0.5
+explosiveness = 0.15
+randomness = 0.39
+visibility_aabb = AABB(-5.5222173, -6.125435, -5.000704, 10.929419, 10.339002, 10.0856495)
+process_material = SubResource("ParticleProcessMaterial_aoruj")
+draw_pass_1 = SubResource("QuadMesh_wse2e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1051107985]
+light_color = Color(0.9455603, 0.9111778, 0.37743098, 1)
+light_energy = 5.919

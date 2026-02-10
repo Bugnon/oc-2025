@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dkwxlpod0t81c"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1hq6p"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 50.0
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ikqbo"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yxocx"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(40, 50, 10)
+gravity = Vector3(0, 98, 0)
+
+[node name="Emission shape" type="Node2D" unique_id=687071535]
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=1392079345]
+position = Vector2(-362, 0)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_1hq6p")
+
+[node name="Label" type="Label" parent="GPUParticles2D2" unique_id=1762847861]
+offset_left = -53.0
+offset_top = -86.0
+offset_right = 62.0
+offset_bottom = -63.0
+text = "sphere surface"
+horizontal_alignment = 1
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="." unique_id=1574862693]
+position = Vector2(-162, 0)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_ikqbo")
+
+[node name="Label" type="Label" parent="GPUParticles2D3" unique_id=154751272]
+offset_left = -53.0
+offset_top = -86.0
+offset_right = 62.0
+offset_bottom = -63.0
+text = "sphere "
+horizontal_alignment = 1
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="." unique_id=1572396737]
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_yxocx")
+
+[node name="Label" type="Label" parent="GPUParticles2D4" unique_id=511659953]
+offset_left = -53.0
+offset_top = -86.0
+offset_right = 62.0
+offset_bottom = -63.0
+text = "box "
+horizontal_alignment = 1

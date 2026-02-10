@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bq8ow00tcacmr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d03e7"]
+albedo_color = Color(0.1, 0.1, 0.049000002, 1)
+roughness = 0.8
 
 [sub_resource type="SphereMesh" id="SphereMesh_6tp5v"]
 material = SubResource("StandardMaterial3D_d03e7")
+flip_faces = true
 
 [sub_resource type="Skin" id="Skin_t6b7q"]
 
@@ -17,10 +20,12 @@ roughness = 0.82
 material = SubResource("StandardMaterial3D_t6b7q")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51pq1"]
-metallic = 1.0
+albedo_color = Color(0.9965065, 0.99652857, 0.9981367, 1)
+metallic = 0.9
 roughness = 0.1
 
 [sub_resource type="SphereMesh" id="SphereMesh_04hyu"]
+lightmap_size_hint = Vector2i(17, 9)
 material = SubResource("StandardMaterial3D_51pq1")
 
 [node name="Spheres" type="Node3D" unique_id=986637817]
@@ -31,10 +36,10 @@ skin = SubResource("Skin_t6b7q")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6tp5v")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=445430053]
+[node name="White" type="MeshInstance3D" parent="." unique_id=445430053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1173096, -0.024084568)
 mesh = SubResource("SphereMesh_l6knd")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1985732823]
+[node name="Metallic" type="MeshInstance3D" parent="." unique_id=1985732823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2508457, 0)
 mesh = SubResource("SphereMesh_04hyu")
