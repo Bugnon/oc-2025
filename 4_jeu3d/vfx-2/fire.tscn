@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cj1wvy428d0el"]
+
+[ext_resource type="Texture2D" uid="uid://csm41o8f41rbm" path="res://flame_01_a.png" id="1_2pqqt"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5ltu8"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ecg"]
+transparency = 1
+albedo_color = Color(0.9572701, 0.54478115, 0.2108492, 1)
+albedo_texture = ExtResource("1_2pqqt")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_icfi2"]
+material = SubResource("StandardMaterial3D_x6ecg")
+
+[node name="Fire" type="Node3D" unique_id=1314343150]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=256385078]
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_5ltu8")
+draw_pass_1 = SubResource("QuadMesh_icfi2")

@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bq01xwc1egmbi"]
+
+[ext_resource type="PackedScene" uid="uid://d280xtsvrnjni" path="res://room2.tscn" id="1_88gup"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_88gup"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_bisa2"]
+sky_material = SubResource("ProceduralSkyMaterial_88gup")
+
+[sub_resource type="Environment" id="Environment_4o3f6"]
+background_mode = 2
+sky = SubResource("Sky_bisa2")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v321d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_88gup"]
+material = SubResource("StandardMaterial3D_v321d")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bisa2"]
+material = SubResource("StandardMaterial3D_v321d")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4o3f6"]
+material = SubResource("StandardMaterial3D_v321d")
+size = Vector3(1, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v5vuv"]
+material = SubResource("StandardMaterial3D_v321d")
+size = Vector3(1, 10, 10)
+
+[node name="Room" type="Node3D" unique_id=2053623876]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1740559442]
+environment = SubResource("Environment_4o3f6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=739532350]
+transform = Transform3D(-0.70710677, -0.35355338, 0.6123724, 0, 0.8660254, 0.5, -0.70710677, 0.35355338, -0.6123724, 11.734344, 17.350342, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1412875047]
+mesh = SubResource("BoxMesh_88gup")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=182132817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+mesh = SubResource("BoxMesh_bisa2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=290157539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 4.5, 0)
+mesh = SubResource("BoxMesh_4o3f6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=777575985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 4.5, 0)
+mesh = SubResource("BoxMesh_v5vuv")
+
+[node name="Room2" parent="." unique_id=1427379237 instance=ExtResource("1_88gup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.644993, 0, -8.095997)
+
+[node name="Room3" parent="." unique_id=937353170 instance=ExtResource("1_88gup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.644993, 0, 1.9040031)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1280421600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.245562, 1.662672, 0)
+light_color = Color(0.2901961, 1, 1, 1)
+shadow_enabled = true
+omni_range = 8.666603
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1030223497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.392872, 1.662672, 2.4634113)
+light_color = Color(0.2901961, 1, 1, 1)
+shadow_enabled = true
+omni_range = 8.666603
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=716633168]
+transform = Transform3D(0.8554004, 4.411135e-08, -0.51796734, 0.51796734, -4.008619e-08, 0.8554004, 1.6969526e-08, -1, -5.713798e-08, 19.879337, 7.1541357, -7.6523423)
+light_color = Color(1, 0.18039216, 1, 1)
+light_energy = 5.985
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 17.775
+spot_angle = 17.210373
+spot_angle_attenuation = 0.020617291
+
+[node name="Label3D" type="Label3D" parent="." unique_id=618442757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19074166, 2.9553049, 3.9847746)
+pixel_size = 0.01
+modulate = Color(1, 0.06666667, 1, 1)
+text = "label 3d"
+font_size = 64
+horizontal_alignment = 0

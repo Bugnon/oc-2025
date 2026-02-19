@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Canvas</h1>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #f80909">
+
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+    </script>
+
+    <h1>Canvas</h1>
+    <canvas id="canvas2" width="400" height="200" style="border:1px solid #000000">
+
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+    var c = document.getElementById("canvas2");
+    var ctx = c.getContext("2d");
+
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10, 10, 390, 200-20);
+
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.font = ("30px Arial");
+    ctx.strokeText("Hello World", 10, 150);
+    </script>
+</body>
+</html>

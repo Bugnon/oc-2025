@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://y5jxhlagh1sf"]
+
+[ext_resource type="PackedScene" uid="uid://v6copa7ehrc0" path="res://lamp.tscn" id="1_as284"]
+[ext_resource type="PackedScene" uid="uid://cq13pi6hpwlf" path="res://table.tscn" id="1_l3qwd"]
+[ext_resource type="PackedScene" uid="uid://ckhj22e850nm4" path="res://bed.tscn" id="2_i25js"]
+[ext_resource type="PackedScene" uid="uid://dur38y1c06871" path="res://bookshelf.tscn" id="2_qjncg"]
+
+[node name="ex3" type="Node3D" unique_id=1915571340]
+
+[node name="Room" type="CSGBox3D" parent="." unique_id=1216917807]
+flip_faces = true
+size = Vector3(10, 10, 10)
+
+[node name="Table" parent="." unique_id=1902532654 instance=ExtResource("1_l3qwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.337158, 0, 0.9135132)
+
+[node name="Bed" parent="." unique_id=673330020 instance=ExtResource("2_i25js")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.9343262, -3.7716675)
+
+[node name="Lamp" parent="." unique_id=1352199140 instance=ExtResource("1_as284")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5913086, -4.452942, 2.972351)
+
+[node name="Lamp2" parent="." unique_id=1818679320 instance=ExtResource("1_as284")]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 2.2044678, -4.4642944, 0)
+
+[node name="Bookshelf" parent="." unique_id=1246263949 instance=ExtResource("2_qjncg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4882813, -3.98938, 0)
+
+[node name="Bookshelf2" parent="." unique_id=2040681395 instance=ExtResource("2_qjncg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4907227, 0, 1.0743408)

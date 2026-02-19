@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://2u2rm7j7p6q2"]
+
+[ext_resource type="Texture2D" uid="uid://4gey3axynf5d" path="res://particles/alpha/trace_01_a.png" id="1_ci28e"]
+[ext_resource type="Texture2D" uid="uid://dh3idcctc4v1l" path="res://particles/alpha/spotlight_01_a.png" id="2_agfoc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6wwtt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vy4dc"]
+sky_material = SubResource("ProceduralSkyMaterial_6wwtt")
+
+[sub_resource type="Environment" id="Environment_baj4n"]
+background_mode = 2
+sky = SubResource("Sky_vy4dc")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4igq"]
+albedo_color = Color(0.08274146, 0.08274145, 0.08274143, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5nvcl"]
+emission_shape_scale = Vector3(10, 1, 10)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -10, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyfq5"]
+transparency = 1
+albedo_texture = ExtResource("1_ci28e")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_gf0xp"]
+material = SubResource("StandardMaterial3D_qyfq5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_njn8w"]
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ch8se"]
+albedo_texture = ExtResource("2_agfoc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_f6lii"]
+material = SubResource("StandardMaterial3D_ch8se")
+size = Vector2(0.1, 0.1)
+
+[node name="Rain" type="Node3D" unique_id=1406785556]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1504026826]
+environment = SubResource("Environment_baj4n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1092064793]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 5.146376, -12.266193)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1854619280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_w4igq")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=541553943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(20, 1, 20)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=900231411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.50826, 0)
+amount = 1000
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_5nvcl")
+draw_pass_1 = SubResource("QuadMesh_gf0xp")
+
+[node name="Drop" type="GPUParticles3D" parent="GPUParticles3D" unique_id=666423610]
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_njn8w")
+draw_pass_1 = SubResource("QuadMesh_f6lii")

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cfq12x8vepufh"]
+
+[ext_resource type="PackedScene" uid="uid://bq8ow00tcacmr" path="res://spheres.tscn" id="1_f3sb7"]
+[ext_resource type="Material" uid="uid://dlsyq8545tn86" path="res://emmissive.tres" id="1_fj7yv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
+sky_top_color = Color(0.7470153, 0.42987373, 0.7766719, 1)
+sky_horizon_color = Color(0.8352994, 0.6103201, 0.1198454, 1)
+sky_curve = 0.0724451
+ground_curve = 0.04287094
+sun_curve = 0.15000002
+
+[sub_resource type="Sky" id="Sky_fj7yv"]
+sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
+
+[sub_resource type="Environment" id="Environment_tlwt5"]
+background_mode = 2
+background_color = Color(0.19266355, 0.4538532, 0.57544273, 1)
+sky = SubResource("Sky_fj7yv")
+ambient_light_source = 3
+ambient_light_color = Color(0.23435366, 0.6846197, 0.5940274, 1)
+glow_enabled = true
+glow_levels/2 = 2.53
+glow_levels/3 = 0.0
+glow_levels/5 = 2.4
+glow_hdr_threshold = 2.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_036b0"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+emission_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_aqk2v"]
+material = SubResource("StandardMaterial3D_fj7yv")
+size = Vector3(2, 2, 2)
+
+[node name="World" type="Node3D" unique_id=1021382964]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1029288245]
+environment = SubResource("Environment_tlwt5")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1630099547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=338040577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, 0)
+mesh = SubResource("BoxMesh_aqk2v")
+surface_material_override/0 = ExtResource("1_fj7yv")
+
+[node name="Spheres" parent="." unique_id=986637817 instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1951257491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7967982, 1.5158215, -0.51397943)
+light_color = Color(1, 0.954, 0.07999998, 1)
+light_energy = 7.933
+light_indirect_energy = 3.092
+light_size = 0.392
+light_specular = 1.731
+shadow_enabled = true
+shadow_bias = 0.621
+omni_attenuation = 2.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1814231958]
+transform = Transform3D(0.91567504, 0.39754242, 0.059153974, -0.14754228, 0.19557524, 0.9695265, 0.37385884, -0.8964989, 0.2377377, 1.7289448, 3.2757382, 4.0007734)
+light_color = Color(1, 0.13, 0.13, 1)
+light_energy = 9.556
+spot_range = 7.78
+spot_attenuation = 2.0
+spot_angle = 20.0
+spot_angle_attenuation = 0.22531313
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=66350876]
+transform = Transform3D(0.06698727, 0.9615163, -0.26645657, -0.7115163, 0.23325318, 0.6628254, 0.69946927, 0.14518735, 0.6997595, -1.128228, 4.9726048, 2.4281034)
+light_color = Color(0.97365624, 0.98991853, 0.99986523, 1)
+shadow_enabled = true
+sky_mode = 1

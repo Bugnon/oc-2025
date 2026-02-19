@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d0lfy7a3uyhgw"]
+
+[ext_resource type="Texture2D" uid="uid://d3373vslb5dyp" path="res://flipbooks/wispy_smoke_01_8x8.tga" id="1_jn4ov"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a05dy"]
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_rnr83"]
+
+[sub_resource type="Curve" id="Curve_j3x4i"]
+_data = [Vector2(0.0124113485, 0.10452229), 0.0, 0.0, 0, 0, Vector2(0.115248226, 0.99026656), 0.0, 0.0, 0, 0, Vector2(0.9804964, 0.020814657), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_i5tef"]
+curve = SubResource("Curve_j3x4i")
+
+[sub_resource type="Curve" id="Curve_as5y3"]
+_data = [Vector2(0, 0.41988617), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_30vip"]
+curve = SubResource("Curve_as5y3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i5ewg"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -98, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_30vip")
+color = Color(1, 0.8901961, 0.3764706, 1)
+alpha_curve = SubResource("CurveTexture_rnr83")
+emission_curve = SubResource("CurveTexture_i5tef")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="Smoke" type="Node2D" unique_id=1556938601]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2101705547]
+material = SubResource("CanvasItemMaterial_a05dy")
+texture = ExtResource("1_jn4ov")
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_i5ewg")

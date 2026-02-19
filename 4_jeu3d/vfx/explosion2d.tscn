@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cdxfy1nxw0bpl"]
+
+[ext_resource type="Texture2D" uid="uid://dh3idcctc4v1l" path="res://particles/alpha/spotlight_01_a.png" id="1_q0qn8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3u8rt"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 267.4
+initial_velocity_max = 390.75
+gravity = Vector3(0, 98, 0)
+scale_min = 0.049999997
+scale_max = 0.29999998
+
+[node name="Node2D" type="Node2D" unique_id=1818072195]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=362370459]
+amount = 80
+texture = ExtResource("1_q0qn8")
+lifetime = 2.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_3u8rt")

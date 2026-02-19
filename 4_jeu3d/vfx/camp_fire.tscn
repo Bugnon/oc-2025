@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://c12b85k0d7lv6"]
+
+[ext_resource type="Texture2D" uid="uid://dr0a447dlhdm2" path="res://particles/alpha/smoke_07_a.png" id="1_hxy6q"]
+[ext_resource type="Texture2D" uid="uid://dh3idcctc4v1l" path="res://particles/alpha/spotlight_01_a.png" id="2_okir6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxy6q"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_okir6"]
+sky_material = SubResource("ProceduralSkyMaterial_hxy6q")
+
+[sub_resource type="Environment" id="Environment_ckl0q"]
+background_mode = 1
+sky = SubResource("Sky_okir6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckl0q"]
+albedo_color = Color(0.06262199, 0.06262199, 0.06262199, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yk2bx"]
+material = SubResource("StandardMaterial3D_ckl0q")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ydwnu"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+spread = 180.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.19999999
+gravity = Vector3(0, 2, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2k0s"]
+transparency = 1
+albedo_texture = ExtResource("1_hxy6q")
+
+[sub_resource type="QuadMesh" id="QuadMesh_c670w"]
+material = SubResource("StandardMaterial3D_w2k0s")
+
+[sub_resource type="Curve" id="Curve_gelkq"]
+_data = [Vector2(0, 0.06948185), 0.0, 0.0, 0, 0, Vector2(0.13652483, 0.99221325), 0.0, 0.0, 0, 0, Vector2(0.9982269, 0.024708033), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5afdv"]
+curve = SubResource("Curve_gelkq")
+
+[sub_resource type="Curve" id="Curve_3y62o"]
+_data = [Vector2(0.0070922, 0.07921529), 0.0, 0.0, 0, 0, Vector2(0.10283687, 1), 0.0, 0.0, 0, 0, Vector2(0.48404256, 0.46855342), -0.6899175, -0.6899175, 0, 0, Vector2(0.98758864, 0.03444147), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_lnjp3"]
+curve = SubResource("Curve_3y62o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5btrc"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.19999999
+gravity = Vector3(0, 1, 0)
+scale_max = 2.0
+color = Color(1, 0.5568628, 0.30980393, 1)
+alpha_curve = SubResource("CurveTexture_5afdv")
+emission_curve = SubResource("CurveTexture_lnjp3")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i1504"]
+load_path = "res://.godot/imported/smoke_07_a.png-6fa37884c9152bde3acef1d5f3905706.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dctyq"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_i1504")
+emission_enabled = true
+emission = Color(0.8117647, 0.52156866, 0, 1)
+emission_energy_multiplier = 2.04
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_86sqa"]
+material = SubResource("StandardMaterial3D_dctyq")
+
+[sub_resource type="Curve" id="Curve_m5hj3"]
+_data = [Vector2(0, 0.06948185), 0.0, 0.0, 0, 0, Vector2(0.13652483, 0.99221325), 0.0, 0.0, 0, 0, Vector2(0.9982269, 0.024708033), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fric"]
+curve = SubResource("Curve_m5hj3")
+
+[sub_resource type="Curve" id="Curve_ntafx"]
+_data = [Vector2(0.0070922, 0.07921529), 0.0, 0.0, 0, 0, Vector2(0.10283687, 1), 0.0, 0.0, 0, 0, Vector2(0.48404256, 0.46855342), -0.6899175, -0.6899175, 0, 0, Vector2(0.98758864, 0.03444147), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_1xy4k"]
+curve = SubResource("Curve_ntafx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7oycj"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 1, 0)
+scale_min = 0.29999998
+scale_max = 0.29999998
+color = Color(1, 0.5568628, 0.30980393, 1)
+alpha_curve = SubResource("CurveTexture_5fric")
+emission_curve = SubResource("CurveTexture_1xy4k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5rnv"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.64705884, 0.3647059, 1)
+albedo_texture = ExtResource("2_okir6")
+emission_enabled = true
+emission = Color(0.972549, 0.92156863, 0, 1)
+emission_energy_multiplier = 2.41
+
+[sub_resource type="QuadMesh" id="QuadMesh_8qxs5"]
+material = SubResource("StandardMaterial3D_g5rnv")
+size = Vector2(0.1, 0.1)
+
+[node name="CampFire" type="Node3D" unique_id=1511400094]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1595268668]
+environment = SubResource("Environment_ckl0q")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=223648989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_yk2bx")
+
+[node name="Fire" type="Node3D" parent="." unique_id=515438296]
+
+[node name="Smoke" type="GPUParticles3D" parent="Fire" unique_id=1984565629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+lifetime = 3.0
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_ydwnu")
+draw_pass_1 = SubResource("QuadMesh_c670w")
+
+[node name="Fire" type="GPUParticles3D" parent="Fire" unique_id=580978908]
+amount = 20
+lifetime = 2.0
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_5btrc")
+draw_pass_1 = SubResource("QuadMesh_86sqa")
+
+[node name="Ember" type="GPUParticles3D" parent="Fire" unique_id=140485902]
+amount = 20
+lifetime = 2.0
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_7oycj")
+draw_pass_1 = SubResource("QuadMesh_8qxs5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fire" unique_id=1918314019]
+light_color = Color(0.92845744, 0.5746047, 0.14529783, 1)
+light_energy = 3.388
+
+[node name="Fire2" type="Node3D" parent="." unique_id=1078567330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Smoke" type="GPUParticles3D" parent="Fire2" unique_id=773542906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+lifetime = 3.0
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_ydwnu")
+draw_pass_1 = SubResource("QuadMesh_c670w")
+
+[node name="Fire" type="GPUParticles3D" parent="Fire2" unique_id=686712050]
+amount = 20
+lifetime = 2.0
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_5btrc")
+draw_pass_1 = SubResource("QuadMesh_86sqa")
+
+[node name="Ember" type="GPUParticles3D" parent="Fire2" unique_id=855849221]
+amount = 20
+lifetime = 2.0
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_7oycj")
+draw_pass_1 = SubResource("QuadMesh_8qxs5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fire2" unique_id=1517673932]
+light_color = Color(0.92845744, 0.5746047, 0.14529783, 1)
+light_energy = 3.388

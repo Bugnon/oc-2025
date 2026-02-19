@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cxhq1gdwwxysj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o7tnd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j4i0m"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_11kbe"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p5re5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6fb1t"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_24gng"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2sgkf"]
+
+[sub_resource type="TextMesh" id="TextMesh_d1de5"]
+text = "text
+"
+
+[sub_resource type="TorusMesh" id="TorusMesh_kn0sh"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_woqgq"]
+
+[sub_resource type="Curve" id="Curve_iddcg"]
+_data = [Vector2(0.033797212, 0.78573835), 0.0, 0.10473625, 0, 0, Vector2(0.39562625, 0.32004714), 0.0, 0.0, 0, 0, Vector2(0.5964214, 0.5343088), 0.0, 0.0, 0, 0, Vector2(0.81113315, 0.17574847), 0.0, 0.0, 0, 0, Vector2(0.9443339, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_71f0e"]
+shape = 0
+curve = SubResource("Curve_iddcg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tammt"]
+
+[sub_resource type="PointMesh" id="PointMesh_gwcu7"]
+material = SubResource("StandardMaterial3D_tammt")
+
+[node name="Mesh" type="Node3D" unique_id=667685949]
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=62459761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+mesh = SubResource("BoxMesh_o7tnd")
+
+[node name="Capsule" type="MeshInstance3D" parent="." unique_id=455879522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = SubResource("CapsuleMesh_j4i0m")
+
+[node name="Cylinder" type="MeshInstance3D" parent="." unique_id=1010298206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+mesh = SubResource("CylinderMesh_11kbe")
+
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=271688295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = SubResource("PlaneMesh_p5re5")
+
+[node name="Quad" type="MeshInstance3D" parent="." unique_id=712690573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2)
+mesh = SubResource("QuadMesh_6fb1t")
+
+[node name="Prism" type="MeshInstance3D" parent="." unique_id=1797305777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+mesh = SubResource("PrismMesh_24gng")
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1336092851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2)
+mesh = SubResource("SphereMesh_2sgkf")
+
+[node name="Text" type="MeshInstance3D" parent="." unique_id=1739125340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2)
+mesh = SubResource("TextMesh_d1de5")
+
+[node name="Torus" type="MeshInstance3D" parent="." unique_id=1026133393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = SubResource("TorusMesh_kn0sh")
+
+[node name="TubeTrail" type="MeshInstance3D" parent="." unique_id=1212397981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+mesh = SubResource("TubeTrailMesh_woqgq")
+
+[node name="RibbonTrail" type="MeshInstance3D" parent="." unique_id=401312246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
+mesh = SubResource("RibbonTrailMesh_71f0e")
+
+[node name="Point" type="MeshInstance3D" parent="." unique_id=575804432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 1)
+mesh = SubResource("PointMesh_gwcu7")

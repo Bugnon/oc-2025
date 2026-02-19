@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b18cv2fsocque"]
+
+[sub_resource type="Gradient" id="Gradient_4xowi"]
+colors = PackedColorArray(0.96862745, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a202f"]
+gradient = SubResource("Gradient_4xowi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_noarx"]
+emission_shape = 1
+emission_sphere_radius = 4.0
+angular_velocity_min = 31.719984
+angular_velocity_max = 31.719984
+gravity = Vector3(0, 9.8, 0)
+scale_min = 2.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_a202f")
+hue_variation_min = -0.32000002
+hue_variation_max = -2.2351742e-08
+
+[sub_resource type="SphereMesh" id="SphereMesh_a0tk4"]
+
+[node name="Node3D" type="Node3D" unique_id=235817020]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=839482775]
+amount = 80
+process_material = SubResource("ParticleProcessMaterial_noarx")
+draw_pass_1 = SubResource("SphereMesh_a0tk4")

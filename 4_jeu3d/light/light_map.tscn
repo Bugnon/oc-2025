@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://b0o2110ptfks0"]
+
+[ext_resource type="LightmapGIData" uid="uid://btiemxs120j6t" path="res://light_map.lmbake" id="1_3ixm2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_irukq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_3ixm2"]
+sky_material = SubResource("ProceduralSkyMaterial_irukq")
+
+[sub_resource type="Environment" id="Environment_p7bnn"]
+background_mode = 2
+sky = SubResource("Sky_3ixm2")
+tonemap_mode = 2
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7bnn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ocs0"]
+lightmap_size_hint = Vector2i(104, 66)
+material = SubResource("StandardMaterial3D_p7bnn")
+add_uv2 = true
+size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6pir"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oaxfl"]
+lightmap_size_hint = Vector2i(44, 66)
+material = SubResource("StandardMaterial3D_a6pir")
+add_uv2 = true
+size = Vector3(4, 4, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_coe5b"]
+size = Vector3(12, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8o8fj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_33ppi"]
+lightmap_size_hint = Vector2i(104, 66)
+material = SubResource("StandardMaterial3D_8o8fj")
+add_uv2 = true
+size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ocs0"]
+emission_enabled = true
+emission = Color(0.973535, 0.9735351, 0.973535, 1)
+emission_energy_multiplier = 3.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_a6pir"]
+material = SubResource("StandardMaterial3D_1ocs0")
+size = Vector3(2, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nh8rw"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8o8fj"]
+lightmap_size_hint = Vector2i(59, 156)
+material = SubResource("StandardMaterial3D_nh8rw")
+add_uv2 = true
+size = Vector3(1, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wu75h"]
+albedo_color = Color(0, 1, 0.0666666, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h75ih"]
+lightmap_size_hint = Vector2i(59, 156)
+material = SubResource("StandardMaterial3D_wu75h")
+add_uv2 = true
+size = Vector3(1, 10, 10)
+
+[node name="LightMap" type="Node3D" unique_id=331418349]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1400959326]
+environment = SubResource("Environment_p7bnn")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=161621199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_1ocs0")
+
+[node name="Floor2" type="MeshInstance3D" parent="." unique_id=1698794695]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_oaxfl")
+
+[node name="BackWall" type="MeshInstance3D" parent="." unique_id=204853081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -5.5)
+mesh = SubResource("BoxMesh_coe5b")
+
+[node name="Ceiling" type="MeshInstance3D" parent="." unique_id=661860610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 0)
+mesh = SubResource("BoxMesh_33ppi")
+
+[node name="Light" type="MeshInstance3D" parent="." unique_id=1030755324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.460871, 0)
+mesh = SubResource("BoxMesh_a6pir")
+
+[node name="RedWall" type="MeshInstance3D" parent="." unique_id=1616456192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 4, 0)
+mesh = SubResource("BoxMesh_8o8fj")
+
+[node name="GreenWall" type="MeshInstance3D" parent="." unique_id=28462383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 4, 0)
+mesh = SubResource("BoxMesh_h75ih")
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1954534249]
+visible = false
+light_data = ExtResource("1_3ixm2")

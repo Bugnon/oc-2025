@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple Canvas</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style3.css">
+    <script src="../js/exemple3.js"></script>
+</head>
+<body>
+    <h1>Exemple Canvas</h1>
+    
+    <canvas id="canvas1" width="400" height="300"></canvas>
+    <script>
+        const canvas1 = document.getElementById('canvas1');
+        console.log("canvas1", canvas1);
+        const ctx1 = canvas1.getContext('2d');
+        // Draw a rectangle
+        ctx1.fillStyle = 'red';
+        ctx1.fillRect(50, 50, 250, 100);
+        // Draw a circle
+        ctx1.beginPath();
+        ctx1.arc(100, 150, 30, 0, Math.PI * 2);
+        ctx1.arc(250, 150, 30, 0, Math.PI * 2);
+        ctx1.fillStyle = 'blue';
+        ctx1.fill();
+        ctx1.closePath();
+
+        // Draw a line
+        ctx1.fillStyle = 'green';
+        ctx1.fillRect(0, 180, 400, 10)
+
+        for (var i = 0; i < 10; i++) {
+            ctx1.beginPath();
+            ctx1.arc(50 + i * 30, 250, 10, 0, Math.PI * 2);
+            ctx1.fillStyle = 'orange';
+            ctx1.fill();
+            ctx1.closePath();
+        }
+
+        const canvas2 = document.getElementById('canvas2');
+        console.log("canvas2", canvas2);
+        const ctx2 = canvas2.getContext('2d');
+       ctx2
+    </script>
+
+
+    <h1>JS created objects</h1>
+    <canvas id="canvas2" width="400" height="300" ></canvas>
+
+    <h1>JS created objects</h1>
+    <canvas id="canvas3" width="400" height="300" ></canvas>
+
+</body>
+</html>

@@ -22,13 +22,62 @@ head            body
 
 */
 
-console.log(document.getElementById('bienvenue').textContent);
+console.log('HALLO');
 
 
-function ajouter_perso() {
-    var nom = 'Jean Dupont';
-    var liste = document.getElementById('liste_de_perso');
-    var nouvel_element = document.createElement('li');
-    nouvel_element.textContent = nom
-    liste.appendChild(nouvel_element);
+var jean = {
+    nom: 'Jean Dupont',
+    classe: 'mage',
+    niveau: 5,
+};
+
+var paul = {
+    nom: 'Paul Martin',
+    classe: 'guerrier',
+    niveau: 3,
+    passer_niveau: function() {
+        this.niveau += 1;
+    }   
+};
+
+
+function creer_personnage(nom, classe, niveau) {
+    var perso = {
+        nom: nom,
+        classe: classe,
+        niveau: niveau,
+        passer_niveau: function() {
+            this.niveau += 1;
+        }
+    };
+    return perso;
+}
+
+var louis = creer_personnage('Louis Bernard', 'archer', 4);
+var claire = creer_personnage('Claire Dubois', 'soigneur', 2);
+var emma = creer_personnage('Emma Leroy', 'mage', 6);
+
+var personnages = [jean, paul, louis, claire, emma];
+
+for (var i = 0; i < personnages.length; i++) {
+    var perso = personnages[i];
+
+    var li_perso = document.createElement('li');
+    var texte_perso = document.createTextNode(perso.nom);
+    li_perso.appendChild(li_perso);
+}   
+
+
+
+
+var list_personnages = document.getElementById('liste_de_perso');
+list_personnages.appendChild(li_personnages);
+
+function ajouter_perso(nom, classe, niveau) {
+    var nouveau_perso = creer_personnage(nom, classe, niveau);
+    personnages.push(nouveau_perso);
+
+    var li_nouveau_perso = document.createElement('li');
+    var texte_nouveau_perso = document.createTextNode(nom + ' est un ' + classe + ' de niveau ' + niveau);
+    li_nouveau_perso.appendChild(texte_nouveau_perso); 
 }

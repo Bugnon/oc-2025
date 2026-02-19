@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvrnrjx41yx0l"]
+
+[ext_resource type="PackedScene" uid="uid://bkn4e7c71lxx6" path="res://lamp.tscn" id="1_3t5sg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ikea"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_is5ow"]
+albedo_color = Color(0.3529412, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bq48c"]
+albedo_color = Color(1, 0.03529412, 1, 1)
+
+[node name="Room1" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.020585775, 0.8837995, 0.46741283, 0.3747778, -0.42660066, 0.8231364, 0.92688614, 0.19212084, -0.32244647, 0, 0, 40)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(10, 7, 10)
+material = SubResource("StandardMaterial3D_4ikea")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
+operation = 2
+size = Vector3(9, 6, 8.5)
+material = SubResource("StandardMaterial3D_is5ow")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5)
+operation = 2
+size = Vector3(4, 3, 2)
+material = SubResource("StandardMaterial3D_bq48c")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5012512, -2.4522705, -2.7158203)
+light_color = Color(1, 1, 0.07058824, 1)
+shadow_enabled = true
+omni_range = 2.962
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9987488, -1.9522705, -2.7158203)
+visible = false
+light_color = Color(1, 0.050980393, 1, 1)
+omni_range = 2.962
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4987488, 2.5477295, -2.7158203)
+light_color = Color(1, 1, 0.105882354, 1)
+shadow_enabled = true
+omni_range = 9.267
+omni_attenuation = 0.457
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, -0.25881907, 0, 0.25881907, 0.9659258, 2.9987488, -1.4522705, 3.012085)
+shadow_enabled = true
+spot_range = 18.0
+spot_attenuation = -0.39
+spot_angle = 15.58
+spot_angle_attenuation = 0.307786
+
+[node name="Lamp" parent="." instance=ExtResource("1_3t5sg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.084961, -2.5390015, -1.9554443)
