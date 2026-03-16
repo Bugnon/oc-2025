@@ -42,4 +42,5 @@ $$ E = m c^2 $$
 ## Hyperliens
 
 - [Site web du gymnase](https://www.gymnasedubugnon.ch)
-- [Moode du gymnase](https://mdlgb.ch)
+- [Moodle du gymnase](https://mdlgb.ch)
+- another link
