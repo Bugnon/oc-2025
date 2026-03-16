@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://crwevrc3peru2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1bey1"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bey1"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bey1"]
+spread = 1.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0q3j"]
+albedo_color = Color(1, 0.1882353, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_dpong"]
+material = SubResource("StandardMaterial3D_m0q3j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m0q3j"]
+spread = 10.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpong"]
+albedo_color = Color(0.12565377, 0.7348553, 0.663763, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3fq0p"]
+material = SubResource("StandardMaterial3D_dpong")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dpong"]
+spread = 10.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fq0p"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.09411765, 0.23529412, 0.9098039, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ylkwj"]
+material = SubResource("StandardMaterial3D_3fq0p")
+
+[node name="Collision" type="Node3D" unique_id=480088109]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=897817792]
+mesh = SubResource("SphereMesh_1bey1")
+
+[node name="GPUParticlesCollisionSphere3D" type="GPUParticlesCollisionSphere3D" parent="MeshInstance3D" unique_id=1034831791]
+radius = 5.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=70648985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+mesh = SubResource("BoxMesh_1bey1")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="MeshInstance3D2" unique_id=1845887436]
+size = Vector3(10, 10, 10)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1587424066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 0)
+lifetime = 3.0
+collision_base_size = 0.1
+visibility_aabb = AABB(-0.8333349, -45.58999, -1, 61.83336, 46.58931, 2)
+process_material = SubResource("ParticleProcessMaterial_1bey1")
+draw_pass_1 = SubResource("SphereMesh_dpong")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1668715718]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4, 0, 12.5)
+amount = 10
+lifetime = 3.0
+collision_base_size = 0.5
+visibility_aabb = AABB(-0.3473177, -55.65107, -10.989916, 61.269184, 57.006935, 21.151325)
+process_material = SubResource("ParticleProcessMaterial_m0q3j")
+draw_pass_1 = SubResource("SphereMesh_3fq0p")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="." unique_id=1427045810]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.1, 1.5, 12.5)
+amount = 10
+lifetime = 3.0
+collision_base_size = 0.5
+visibility_aabb = AABB(-0.3473177, -55.65107, -10.989916, 61.269184, 57.006935, 21.151325)
+process_material = SubResource("ParticleProcessMaterial_dpong")
+draw_pass_1 = SubResource("SphereMesh_ylkwj")
