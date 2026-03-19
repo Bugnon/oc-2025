@@ -1,0 +1,19 @@
+[project]
+name = "ia-a-05"
+version = "0.1.0"
+requires-python = "==3.11.*"
+dependencies = [
+    "tensorflow-macos",
+    "tensorflow-metal",
+    "keras",
+    "matplotlib",
+    "numpy<2",
+    "ipykernel",
+    "tiktoken",
+    "gensim",
+    "scikit-learn",
+    "plotly>=5.0",
+    "nbformat>=4.2.0",
+    "transformers",
+    "sentencepiece"
+]
