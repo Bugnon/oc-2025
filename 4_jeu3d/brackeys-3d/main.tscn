@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://cg76tawqyr1ve"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b4haqph50vcjw" path="res://assets/sky_background/autumn_field_puresky_4k.hdr" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bvvpjpwtfvbt8" path="res://chest.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dbv8u88uhiu6n" path="res://barrel.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://djqnaj5dasrnn" path="res://barrel2.tscn" id="4_1bvp3"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7mycd"]
+panorama = ExtResource("1_lquwl")
 
 [sub_resource type="Sky" id="Sky_ig7tw"]
-sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+sky_material = SubResource("PanoramaSkyMaterial_7mycd")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
