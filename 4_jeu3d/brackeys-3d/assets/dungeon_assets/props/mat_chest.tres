@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ca62ikbfdx1lp"]
+
+[ext_resource type="Texture2D" uid="uid://b3vsk3s6mgecd" path="res://assets/import_examples/chest_gold/chest_texture.png" id="1_aew2w"]
+
+[resource]
+albedo_texture = ExtResource("1_aew2w")
+metallic = 0.95
+roughness = 0.47
