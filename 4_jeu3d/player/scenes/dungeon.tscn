@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://c072y75531ad1"]
+
+[ext_resource type="Texture2D" uid="uid://b4haqph50vcjw" path="res://assets/sky_background/autumn_field_puresky_4k.hdr" id="1_fvacq"]
+[ext_resource type="PackedScene" uid="uid://khanjcxi7m8y" path="res://scenes/wall.tscn" id="2_ys5p8"]
+[ext_resource type="PackedScene" uid="uid://c648d27abgim8" path="res://scenes/corner.tscn" id="3_hsn05"]
+[ext_resource type="PackedScene" uid="uid://cfjv06c2al740" path="res://assets/skeleton/skeleton_mage.glb" id="4_etlrv"]
+[ext_resource type="PackedScene" uid="uid://cblcg1s12mtdx" path="res://assets/zombie/zombie_run.glb" id="5_tkjml"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5hkx1"]
+panorama = ExtResource("1_fvacq")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_pnxem"]
+sky_material = SubResource("PanoramaSkyMaterial_5hkx1")
+
+[sub_resource type="Environment" id="Environment_7wjui"]
+background_mode = 2
+sky = SubResource("Sky_pnxem")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Dungeon" type="Node3D" unique_id=1891041788]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1613880992]
+environment = SubResource("Environment_7wjui")
+
+[node name="Walls" type="Node3D" parent="." unique_id=229514889]
+
+[node name="wall" parent="Walls" unique_id=632319823 instance=ExtResource("2_ys5p8")]
+
+[node name="wall7" parent="Walls" unique_id=2133729874 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8)
+
+[node name="wall5" parent="Walls" unique_id=1857213806 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="wall3" parent="Walls" unique_id=1772671684 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, 4)
+
+[node name="wall4" parent="Walls" unique_id=1914829199 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, 8)
+
+[node name="wall6" parent="Walls" unique_id=1953482769 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8, 0, 3.9999995)
+
+[node name="wall2" parent="Walls" unique_id=456599890 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Corner" parent="Walls" unique_id=2022237965 instance=ExtResource("3_hsn05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="wall8" parent="Walls" unique_id=1517401944 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="wall9" parent="Walls" unique_id=1195445046 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, 20)
+
+[node name="wall10" parent="Walls" unique_id=1002523413 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, 16.000002)
+
+[node name="wall11" parent="Walls" unique_id=270953504 instance=ExtResource("2_ys5p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 12)
+
+[node name="Corner4" parent="Walls" unique_id=1966687097 instance=ExtResource("3_hsn05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12)
+
+[node name="Corner2" parent="Walls" unique_id=850650958 instance=ExtResource("3_hsn05")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 0, 4.371139e-08)
+
+[node name="Corner5" parent="Walls" unique_id=520086072 instance=ExtResource("3_hsn05")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.000001, 0, 11.999999)
+
+[node name="Corner3" parent="Walls" unique_id=286317167 instance=ExtResource("3_hsn05")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -8, 0, 8)
+
+[node name="skeleton_mage" parent="." unique_id=680944659 instance=ExtResource("4_etlrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 19)
+
+[node name="zombie_run" parent="." unique_id=1053167596 instance=ExtResource("5_tkjml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 19)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=896780476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(100, 1, 100)

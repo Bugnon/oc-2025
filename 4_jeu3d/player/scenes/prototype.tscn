@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://bmgf6bf8yb5l1"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ixygg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ixygg"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_20kwy"]
+sky_material = SubResource("ProceduralSkyMaterial_ixygg")
+
+[sub_resource type="Environment" id="Environment_nhfup"]
+background_mode = 2
+sky = SubResource("Sky_20kwy")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Prototype" type="Node3D" unique_id=2095703015]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1963750896]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=414589121]
+environment = SubResource("Environment_nhfup")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1820452820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+metadata/_edit_lock_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1873781960]
+transform = Transform3D(-4.371139e-08, -0.007993523, 0.99996805, 0, 0.99996805, 0.007993523, -1, 3.49408e-10, -4.3709992e-08, 4.5, 6, 13)
+height = 12.0
+
+[node name="Building" type="CSGCombiner3D" parent="." unique_id=1065562103]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Building" unique_id=1477446874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0)
+use_collision = true
+size = Vector3(20, 8, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Building" unique_id=1988430314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.9, 0)
+use_collision = true
+size = Vector3(10, 4, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Building" unique_id=226854592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.9, 13.5)
+use_collision = true
+size = Vector3(10, 4, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Building" unique_id=1146649718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 19)
+use_collision = true
+size = Vector3(20, 8, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Building" unique_id=2031528783]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 4.4, 9.5)
+use_collision = true
+size = Vector3(20, 8, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Building/CSGBox3D3" unique_id=1993814033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, -2.5, 0)
+operation = 2
+use_collision = true
+size = Vector3(2, 3, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Building" unique_id=425464684]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.5, 4.4, 9.500001)
+use_collision = true
+size = Vector3(20, 8, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Building/CSGBox3D4" unique_id=1541133794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -2.5, 0)
+operation = 2
+use_collision = true
+size = Vector3(2, 3, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Building" unique_id=1197138299]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.5, 1.9, 6.750002)
+use_collision = true
+size = Vector3(14.5, 4, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Building/CSGBox3D7" unique_id=634044367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.5, 0)
+operation = 2
+use_collision = true
+size = Vector3(2, 3, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Building" unique_id=1543262754]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5, 1.9, 7.750001)
+use_collision = true
+size = Vector3(14.5, 4, 1)
+
+[node name="ProtoController" parent="." unique_id=526300896 instance=ExtResource("1_ixygg")]
+transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, -38.5, 0.5, 3.5000005)
