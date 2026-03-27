@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cg76tawqyr1ve"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b4haqph50vcjw" path="res://assets/sky_background/autumn_field_puresky_4k.hdr" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bvvpjpwtfvbt8" path="res://chest.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dbv8u88uhiu6n" path="res://barrel.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://djqnaj5dasrnn" path="res://barrel2.tscn" id="4_1bvp3"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7mycd"]
+panorama = ExtResource("1_lquwl")
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("PanoramaSkyMaterial_7mycd")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D" unique_id=1338936635]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2115603103]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=253679131]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1213277225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+metadata/_edit_lock_ = true
+
+[node name="Building" type="CSGCombiner3D" parent="." unique_id=1784386692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Building" unique_id=329728654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 4.5, 0)
+size = Vector3(1, 8, 30)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Building" unique_id=1470044616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 4.5, 0)
+size = Vector3(1, 8, 30)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Building" unique_id=524615860]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 4.5, -15.5)
+size = Vector3(1, 8, 30)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Building" unique_id=2593271]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 4.5, 15.5)
+size = Vector3(1, 8, 30)
+
+[node name="Door2" type="CSGBox3D" parent="Building/CSGBox3D3" unique_id=570259185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.75, -2.9999988)
+operation = 2
+size = Vector3(1, 2.5, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Building" unique_id=2010731981]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.5, 28.5)
+size = Vector3(1, 4, 20)
+
+[node name="Door" type="CSGBox3D" parent="Building/CSGBox3D5" unique_id=1639077246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 1)
+operation = 2
+size = Vector3(1, 2.5, 2)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Building" unique_id=2103183413]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5, 2.5, 5)
+size = Vector3(1, 4, 15)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Building" unique_id=706906659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 2.5, 22)
+size = Vector3(1, 4, 12)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Building" unique_id=1127067203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 2.5, 22)
+size = Vector3(1, 4, 12)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Building" unique_id=85035676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6.5, -7)
+radius = 1.0
+height = 12.0
+sides = 32
+
+[node name="ProtoController" parent="." unique_id=1396774097 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 37.5)
+
+[node name="Chest" parent="." unique_id=1056979321 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 32.5)
+
+[node name="Chest2" parent="." unique_id=985024894 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 32)
+
+[node name="Barrel" parent="." unique_id=9893237 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.5, 32.5)
+
+[node name="Barrel2" parent="." unique_id=1652951952 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.545372, 3.8074987, 33.212868)
