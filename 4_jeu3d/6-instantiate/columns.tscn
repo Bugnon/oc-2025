@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://q18x7de4dlmc"]
+
+[ext_resource type="Script" uid="uid://cnyr1eqnxckri" path="res://columns.gd" id="1_nkvek"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkvek"]
+albedo_color = Color(9.62615e-07, 0.6821437, 0.28997856, 1)
+
+[node name="Columns" type="Node3D" unique_id=1873003867]
+script = ExtResource("1_nkvek")
+columns = 6
+height = 5
+material = SubResource("StandardMaterial3D_nkvek")

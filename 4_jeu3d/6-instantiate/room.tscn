@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://deowirj42iecm"]
+
+[ext_resource type="Script" uid="uid://cy5encgyoo8ge" path="res://room.gd" id="1_88gup"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88gup"]
+albedo_color = Color(0.6213231, 0.92939943, 0.97679204, 1)
+
+[node name="Room" type="Node3D" unique_id=363845429]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_88gup")
+window = Rect2(1, 0.2, 2, 1.5)
+d = 0.2
+material = SubResource("StandardMaterial3D_88gup")
+export = true
+
+[node name="@CSGBox3D@500271" type="CSGBox3D" parent="." unique_id=1237588628]
+size = Vector3(5, 3, 4)
+material = SubResource("StandardMaterial3D_88gup")
+
+[node name="@CSGBox3D@500272" type="CSGBox3D" parent="@CSGBox3D@500271" unique_id=464917155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+operation = 2
+size = Vector3(4.6, 2.6, 3.8)
+material = SubResource("StandardMaterial3D_88gup")
+
+[node name="@CSGBox3D@500273" type="CSGBox3D" parent="@CSGBox3D@500271" unique_id=1085781791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.2, 0)
+operation = 2
+size = Vector3(2, 1.5, 4)
+material = SubResource("StandardMaterial3D_88gup")

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dbcxtusj2ftw4"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_37kl0"]
+[ext_resource type="PackedScene" uid="uid://dor1c2yku5gmv" path="res://pine.tscn" id="2_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://cnxj7hswp85oy" path="res://house.tscn" id="3_ppyta"]
+[ext_resource type="PackedScene" uid="uid://q18x7de4dlmc" path="res://columns.tscn" id="4_ppyta"]
+[ext_resource type="PackedScene" uid="uid://b2cnmkbj0vgiq" path="res://building.tscn" id="5_ykrsh"]
+[ext_resource type="PackedScene" uid="uid://86yb4maltin7" path="res://matrix.tscn" id="6_g14j6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_37kl0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_8uh7m"]
+sky_material = SubResource("ProceduralSkyMaterial_37kl0")
+
+[sub_resource type="Environment" id="Environment_6uqi0"]
+background_mode = 2
+sky = SubResource("Sky_8uh7m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37kl0"]
+albedo_color = Color(1, 0.41960785, 1, 1)
+
+[node name="Test" type="Node3D" unique_id=366744981]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=631850132]
+environment = SubResource("Environment_6uqi0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1534761743]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=848475196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="Block" type="CSGBox3D" parent="." unique_id=1049165538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+use_collision = true
+size = Vector3(3, 3, 3)
+material = SubResource("StandardMaterial3D_37kl0")
+
+[node name="Pine" parent="." unique_id=1285751922 instance=ExtResource("2_6uqi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35464096, 0, 4.925766)
+
+[node name="House" parent="." unique_id=860999780 instance=ExtResource("3_ppyta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7800045, 0, 3.2618637)
+
+[node name="Columns" parent="." unique_id=1873003867 instance=ExtResource("4_ppyta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.166765, 0.49999952, -1.0514822)
+height = 3
+
+[node name="Building" parent="." unique_id=1897712195 instance=ExtResource("5_ykrsh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.833235, -4.7683716e-07, 5.948518)
+
+[node name="Village" parent="." unique_id=1708534984 instance=ExtResource("6_g14j6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 8, 0, 10)
+repeat = Vector3i(4, 1, 5)
+scene = ExtResource("3_ppyta")
+
+[node name="Forrest" parent="." unique_id=179229769 instance=ExtResource("6_g14j6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -26.381897, 0, -35.91903)
+repeat = Vector3i(4, 1, 5)
+random = Vector3(0.5, 0, 0.3)
+scene = ExtResource("2_6uqi0")
+
+[node name="ProtoController" parent="." unique_id=210965704 instance=ExtResource("1_37kl0")]
+transform = Transform3D(-0.5829315, 0, -0.8125212, 0, 1, 0, 0.8125212, 0, -0.5829315, 2.174, 0, 11.216)
+can_sprint = true
+can_freefly = true
+jump_velocity = 10.0
+sprint_speed = 15.0
+
+[editable path="ProtoController"]

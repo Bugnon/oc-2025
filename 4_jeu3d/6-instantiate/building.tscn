@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b2cnmkbj0vgiq"]
+
+[ext_resource type="Script" uid="uid://d2rly877n7jjp" path="res://building.gd" id="1_5j34s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j34s"]
+albedo_color = Color(1, 0.7294118, 1, 1)
+
+[node name="Building" type="Node3D" unique_id=1897712195]
+script = ExtResource("1_5j34s")
+floors = 3
+material = SubResource("StandardMaterial3D_5j34s")

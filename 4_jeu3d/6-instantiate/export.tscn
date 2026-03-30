@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://de8wmwunsi5xy"]
+
+[ext_resource type="Script" uid="uid://fqn5u6fenc4k" path="res://export.gd" id="1_jkwhv"]
+[ext_resource type="PackedScene" uid="uid://b2cnmkbj0vgiq" path="res://building.tscn" id="2_6h8w1"]
+[ext_resource type="PackedScene" uid="uid://b1c0dgstjln50" path="res://stairs.tscn" id="2_d5e3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkwhv"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_jkwhv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jkwhv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7x6hk"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_d5e3t"]
+
+[node name="Export" type="Node3D" unique_id=1767462152 node_paths=PackedStringArray("node", "some_button")]
+script = ExtResource("1_jkwhv")
+flag = true
+vector3i = Vector3i(5, 2, 3)
+a = [false, PackedByteArray(0, 0), 3]
+ints = Array[int]([6, 3])
+bools = Array[bool]([true, true])
+floats = Array[float]([1.0, 2.0])
+b = [{
+23: "text",
+234: "hell",
+Vector2i(3, 2): Vector3(1, 2, 3)
+}, null]
+scenes = Array[PackedScene]([ExtResource("2_6h8w1"), ExtResource("2_d5e3t"), null])
+vector3s = PackedVector3Array(0, 321, 23, 23, 23, 23)
+strings = PackedStringArray("hello", "you")
+laser_angles = Array[float]([234.14599999999996, -122.927])
+skill_trees = Array[String](["uid://d2rly877n7jjp", "uid://fqn5u6fenc4k"])
+hair_colors = PackedColorArray(0.3025534, 0.72320396, 0.3848222, 1, 0.14908153, 0.43002698, 0.48438674, 1)
+barista_suggestions = Array[String](["Mocha"])
+character_name = "Leah"
+layers_2d_physics = 3
+layers_2d_render = 2
+layers_2d_navigation = 34
+float1 = 9.0
+float3 = 18.0
+exponential = 3.48
+no_slider = 10.0
+slider = 5.0
+length = 9
+time = 7
+speed = 26
+transition_speed = 4.594783
+file_name = "uid://q18x7de4dlmc"
+directory_name = "res://scenes"
+script_file = "uid://d2rly877n7jjp"
+scene_file = "uid://dpt41fgjoupjv"
+tool_image = "/Users/raphael/GitHub/oc-2025/4_jeu3d/web/6_instantiate.png"
+color1 = Color(0.80784315, 0, 0, 1)
+color2 = Color(62.148346, 33.57808, 176.42941, 1)
+color3 = Color(0.4469475, 147.2992, 5.757045, 1)
+resource = SubResource("CircleShape2D_jkwhv")
+animation = SubResource("AnimationNodeTimeSeek_jkwhv")
+node = NodePath("Sphere")
+some_button = NodePath("Button")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=606464573]
+mesh = SubResource("BoxMesh_jkwhv")
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=801580821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("SphereMesh_7x6hk")
+
+[node name="Prism" type="MeshInstance3D" parent="." unique_id=678821563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("PrismMesh_d5e3t")
+
+[node name="Button" type="Button" parent="." unique_id=299879300]
+offset_left = 292.0
+offset_top = 162.0
+offset_right = 536.0
+offset_bottom = 274.0
+text = "Button"

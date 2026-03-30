@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cnxj7hswp85oy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfkix"]
+albedo_color = Color(0.9927128, 0.41143548, 0.37325525, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_metfq"]
+material = SubResource("StandardMaterial3D_hfkix")
+size = Vector3(1.2, 1, 1.1)
+
+[node name="House" type="Node3D" unique_id=1285751922]
+
+[node name="MeshInstance3D" type="CSGBox3D" parent="." unique_id=171554619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+use_collision = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1522591730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PrismMesh_metfq")

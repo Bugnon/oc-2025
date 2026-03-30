@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://i02d54w647yw"]
+
+[ext_resource type="Script" uid="uid://bpiqkj4p2yr3x" path="res://windmill.gd" id="1_0jr3m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aeunn"]
+size = Vector3(1, 4, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0jr3m"]
+size = Vector3(0.1, 6, 0.5)
+
+[node name="Windmill" type="Node3D" unique_id=1845077594]
+script = ExtResource("1_0jr3m")
+speed = 2.0
+blade_size = Vector3(0.1, 6, 0.5)
+
+[node name="Stand" type="MeshInstance3D" parent="." unique_id=478589740]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+mesh = SubResource("BoxMesh_aeunn")
+
+[node name="Blade" type="MeshInstance3D" parent="Stand" unique_id=1131944282]
+transform = Transform3D(1, 0, 0, 0, -0.87794167, 0.47876704, 0, -0.47876704, -0.87794167, 0.68969345, 1.5404816, -0.08073321)
+mesh = SubResource("BoxMesh_0jr3m")
