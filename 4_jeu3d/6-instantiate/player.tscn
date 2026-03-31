@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b8xem1il0flkn"]
+
+[ext_resource type="Script" uid="uid://cdgox52r6c7ka" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
+friction = 0.1
+bounce = 0.3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+
+[node name="Player" type="RigidBody3D" unique_id=316900991]
+physics_material_override = SubResource("PhysicsMaterial_4flbx")
+gravity_scale = 2.0
+lock_rotation = true
+linear_damp = 4.0
+script = ExtResource("1_4flbx")
+speed = 10
+jump_impulse = 15
+tilt_limit = 0.7155849933176751
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1405266860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116924299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="TwistPivot" type="Node3D" parent="." unique_id=329526164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot" unique_id=705720964]
+transform = Transform3D(1, 0, 0, 0, 0.95438117, 0.29859108, 0, -0.29859108, 0.95438117, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot" unique_id=100823178]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, -2.9802322e-08, 0, 2.9802322e-08, 0.99999994, 0, -0.14929557, 1.9771904)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1510793293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, -0.7, 0)
+collide_with_areas = true

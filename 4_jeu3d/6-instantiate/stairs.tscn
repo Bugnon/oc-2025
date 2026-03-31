@@ -1,39 +1,13 @@
 [gd_scene format=3 uid="uid://b1c0dgstjln50"]
 
 [ext_resource type="Script" uid="uid://cpw8r51f6dvx5" path="res://stairs.gd" id="1_l5oqe"]
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_g0mii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5oqe"]
 albedo_color = Color(0.92135584, 0.84113574, 0.32121658, 1)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g0mii"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_hakd6"]
-sky_material = SubResource("ProceduralSkyMaterial_g0mii")
-
-[sub_resource type="Environment" id="Environment_fvclq"]
-background_mode = 2
-sky = SubResource("Sky_hakd6")
-tonemap_mode = 2
-glow_enabled = true
-
 [node name="Stairs" type="Node3D" unique_id=476667031]
 script = ExtResource("1_l5oqe")
-steps = 4
+steps = 6
+step_size = Vector3(1, 1, 4)
 angle = 0.39269908169872414
 material = SubResource("StandardMaterial3D_l5oqe")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=472583814]
-environment = SubResource("Environment_fvclq")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1311370097]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="ProtoController" parent="." unique_id=1891092502 instance=ExtResource("2_g0mii")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9087825, -4.7683716e-07, 6.567745)
-has_gravity = false
-
-[editable path="ProtoController"]

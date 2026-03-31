@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ufr6srcb8nk2"]
+
+[ext_resource type="Script" uid="uid://brpnlxa3ajqvy" path="res://random.gd" id="1_2e35y"]
+[ext_resource type="PackedScene" uid="uid://dor1c2yku5gmv" path="res://pine.tscn" id="2_2truy"]
+
+[node name="Random" type="Node3D" unique_id=700920654]
+script = ExtResource("1_2e35y")
+count = 200
+scene = ExtResource("2_2truy")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2cnmkbj0vgiq" path="res://building.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://86yb4maltin7" path="res://matrix.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cnxj7hswp85oy" path="res://house.tscn" id="6_7mycd"]
-[ext_resource type="PackedScene" path="res://addons/proto_controller.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="7_272bh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwfwh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,15 +21,9 @@ sky = SubResource("Sky_d2tnk")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_5vw27"]
-size = Vector3(100, 1, 100)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
-albedo_color = Color(0.9769084, 0.8632022, 0.9380308, 1)
-metallic = 0.85
-
 [node name="objects" type="Node3D" unique_id=1697120433]
 script = ExtResource("1_1bvp3")
+dimension = 3
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=304353695]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 10, 0)
@@ -38,39 +32,30 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1105922059]
 environment = SubResource("Environment_uq4jh")
 
-[node name="Floor" type="MeshInstance3D" parent="." unique_id=198763228]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14125443, 0)
-mesh = SubResource("BoxMesh_5vw27")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=239807244]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 2, 2)
-visible = false
-
-[node name="GeneratedBox" type="CSGBox3D" parent="." unique_id=601900619]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
-visible = false
-size = Vector3(1, 2, 1)
+[node name="Floor" type="CSGBox3D" parent="." unique_id=202057257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101350784, -0.19163632, -0.52947813)
+use_collision = true
+size = Vector3(100, 1, 100)
 
 [node name="Stairs" parent="." unique_id=476667031 instance=ExtResource("2_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.122536, 0, 19.326427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.122536, 0.5, 19.326427)
 
 [node name="Stairs2" parent="." unique_id=437205787 instance=ExtResource("2_1bvp3")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.0052, 0, -3)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.0052, 0.5, -3)
 step_size = Vector3(3, 1, 10)
 step_delta = Vector3(1, 1, 0)
 
 [node name="Columns" parent="." unique_id=1873003867 instance=ExtResource("3_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3)
 columns = 4
 height = 6
 
 [node name="Columns2" parent="." unique_id=329430940 instance=ExtResource("3_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 11)
 height = 9
 
 [node name="Building" parent="." unique_id=1897712195 instance=ExtResource("4_272bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.907576, 0, -20.65107)
-resource = SubResource("StandardMaterial3D_lquwl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.907576, 0.5, -20.65107)
 
 [node name="Building2" parent="." unique_id=1359057035 instance=ExtResource("4_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, 10)
@@ -78,25 +63,21 @@ floors = 3.0
 
 [node name="Village" parent="." unique_id=1708534984 instance=ExtResource("5_lquwl")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 23)
-visible = false
 scene = ExtResource("6_7mycd")
 show_node = null
 
 [node name="Village2" parent="." unique_id=1706647038 instance=ExtResource("5_lquwl")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 34, 0, 9)
-visible = false
 scene = ExtResource("6_7mycd")
 show_node = null
 
 [node name="Matrix" parent="." unique_id=1229997710 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -23)
-visible = false
 repeat = Vector3i(5, 1, 5)
 random = Vector3(0.5, 0, 0.4)
 show_node = null
 
-[node name="ProtoController" parent="." unique_id=28781802 instance=ExtResource("7_272bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.732211, -1.9073486e-06, 19.286163)
-script = null
+[node name="ProtoController" parent="." unique_id=776493236 instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.476915, 0, 8.765984)
 
 [editable path="ProtoController"]

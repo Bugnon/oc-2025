@@ -1,5 +1,6 @@
 @tool
 extends Node3D
+class_name Matrix
 
 @export var repeat = Vector3i(3, 1, 1):
 	set(x):

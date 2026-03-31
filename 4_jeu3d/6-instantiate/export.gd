@@ -33,6 +33,7 @@ to have them visible and editable in the editor.
 @export var vector2i =  Vector2i(1, 2)
 @export var vector3 =  Vector3(1, 2, 3)
 @export var vector3i =  Vector3i(1, 2, 3)
+@export var aabb =  AABB(Vector3(1, 2, 3), Vector3(4, 5, 6))
 
 @export_group("Buttons")
 @export_tool_button("Configure", "BoxMesh") var hello_action = hello

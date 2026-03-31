@@ -1,5 +1,6 @@
 @tool
 extends Node3D
+class_name Building
 
 @export var floor_size = Vector3(10, 0.5, 5):
 	set(x):

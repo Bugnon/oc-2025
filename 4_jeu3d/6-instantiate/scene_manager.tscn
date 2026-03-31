@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dchm3hcrabvvc"]
+
+[ext_resource type="Script" uid="uid://i043i8b0xwls" path="res://scene_manager.gd" id="1_jo5df"]
+[ext_resource type="PackedScene" uid="uid://dpt41fgjoupjv" path="res://main.tscn" id="2_opu64"]
+[ext_resource type="PackedScene" uid="uid://dbcxtusj2ftw4" path="res://test.tscn" id="3_i6dy3"]
+[ext_resource type="PackedScene" uid="uid://b1c0dgstjln50" path="res://stairs.tscn" id="4_8xgxq"]
+
+[node name="SceneManager" type="Node" unique_id=1274309579]
+script = ExtResource("1_jo5df")
+scene_file = "uid://de8wmwunsi5xy"
+contents = Array[PackedScene]([ExtResource("2_opu64"), ExtResource("3_i6dy3"), ExtResource("4_8xgxq")])

@@ -6,7 +6,6 @@ extends Node3D
 	set(x):
 		steps = x
 		create()
-		pass
 	
 @export var step_size = Vector3(2, 1, 4):
 	set(x):
@@ -37,17 +36,20 @@ func _ready():
 func create():
 	for child in get_children():
 		child.queue_free()
-		
-	for x in range(steps):
-		pass
-		var box = CSGBox3D.new()
-		#var box = MeshInstance3D
+	var box	
+	for i in range(steps):
+		box = CSGBox3D.new()
 		box.size = step_size
 		box.material = material
-		box.rotation.y = x * angle
+		box.use_collision = true
+		box.rotation.y = i * angle
 		
-		box.position = Vector3(x*(step_size.x + step_delta.x), x*(step_size.y + step_delta.y), 0)
+		box.position = Vector3(i*(step_size.x + step_delta.x), i*(step_size.y + step_delta.y), 0)
 		box.operation = CSGShape3D.OPERATION_UNION
 		add_child(box)
 		if show_node:
 			box.owner = get_tree().edited_scene_root
+			
+	var box2 = box.duplicate()
+	box2.position.x += 3
+	add_child(box2)
