@@ -1,0 +1,15 @@
+res://player.tscn
+res://prototype_tiles.tres
+res://world_boundary.gd
+res://check_point.gd
+res://coin.gd
+res://player.gd
+res://scene_2.tscn
+res://check_point.tscn
+res://transition_fader.gd
+res://transition_fader.tscn
+res://coin.tscn
+res://objective.tscn
+res://objective.gd
+res://level.tscn
+res://level_1.tscn

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://b8xem1il0flkn"]
+
+[ext_resource type="Script" uid="uid://cdgox52r6c7ka" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://do21c6eyajsbe" path="res://character.glb" id="3_i3pqv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
+friction = 0.1
+bounce = 0.3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4flbx"]
+font_size = 48
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sweqy"]
+animation = &"Hop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3pqv"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2hs0m"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1jxqw"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_dw050"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2hs0m")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_1jxqw")
+blend_point_1/pos = 0.90000004
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1jxqw"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nvl01"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ivps1"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_urp6f"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nvl01"]
+states/End/position = Vector2(663, 67.75)
+states/Hop/node = SubResource("AnimationNodeAnimation_sweqy")
+states/Hop/position = Vector2(633.95935, 171.06)
+states/Idle/node = SubResource("AnimationNodeAnimation_i3pqv")
+states/Idle/position = Vector2(310.66937, 235.07999)
+states/Run/node = SubResource("AnimationNodeBlendSpace1D_dw050")
+states/Run/position = Vector2(389.95935, 163.56)
+states/Start/position = Vector2(159.5, 147.5)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_1jxqw"), "Start", "Run", SubResource("AnimationNodeStateMachineTransition_nvl01"), "Run", "Hop", SubResource("AnimationNodeStateMachineTransition_ivps1"), "Hop", "Run", SubResource("AnimationNodeStateMachineTransition_urp6f")]
+graph_offset = Vector2(30.45936, -1.4400005)
+
+[node name="Player" type="RigidBody3D" unique_id=316900991]
+physics_material_override = SubResource("PhysicsMaterial_4flbx")
+gravity_scale = 2.0
+lock_rotation = true
+linear_damp = 4.0
+script = ExtResource("1_4flbx")
+speed = 10
+jump_impulse = 15
+tilt_limit = 0.7155849933176751
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116924299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="TwistPivot" type="Node3D" parent="." unique_id=329526164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot" unique_id=705720964]
+transform = Transform3D(1, 0, 0, 0, 0.95438117, 0.29859108, 0, -0.29859108, 0.95438117, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot" unique_id=100823178]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, -2.9802322e-08, 0, 2.9802322e-08, 0.99999994, 0, -0.14929557, 3)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1510793293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, -0.7, 0)
+collide_with_areas = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1441604975]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1059630795]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Coins: 0"
+label_settings = SubResource("LabelSettings_4flbx")
+
+[node name="Character" parent="." unique_id=1977922408 instance=ExtResource("3_i3pqv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Character/KayKit Animated Character" parent_id_path=PackedInt32Array(1977922408, 2079053467) index="0" unique_id=1346154904]
+bones/0/rotation = Quaternion(-0.0035009629, -7.66821e-29, 3.798418e-18, 0.9999939)
+bones/1/rotation = Quaternion(0.0496006, -3.0794655e-26, -1.5371635e-17, 0.9987692)
+bones/1/scale = Vector3(1, 0.99999994, 0.99999994)
+bones/2/rotation = Quaternion(-0.68459386, -0.17771588, 0.6842005, -0.17781445)
+bones/4/rotation = Quaternion(-0.70346564, 0.2896593, 0.6465603, 0.056510307)
+bones/5/rotation = Quaternion(0.30050638, -0.376591, 0.67987657, 0.5528498)
+bones/5/scale = Vector3(1, 0.99999994, 0.9999998)
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=2042380848]
+root_node = NodePath("../Character")
+tree_root = SubResource("AnimationNodeStateMachine_nvl01")
+anim_player = NodePath("../Character/AnimationPlayer")
+parameters/Run/blend_position = 0.0
+
+[editable path="Character"]

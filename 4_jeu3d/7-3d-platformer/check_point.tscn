@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cm8cgon25xfea"]
+
+[ext_resource type="Script" uid="uid://cwkx2tlrxi4g" path="res://check_point.gd" id="1_lywxg"]
+[ext_resource type="Material" uid="uid://bwyl508fdexry" path="res://orange_material_3d.tres" id="2_c21nn"]
+[ext_resource type="Material" uid="uid://djrjbcfmpw1ts" path="res://blue_material.tres" id="2_up4lw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v86xw"]
+radius = 3.0
+
+[node name="CheckPoint" type="Area3D" unique_id=991760816]
+script = ExtResource("1_lywxg")
+material_1 = ExtResource("2_up4lw")
+material_2 = ExtResource("2_c21nn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1662741536]
+shape = SubResource("SphereShape3D_v86xw")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CollisionShape3D" unique_id=785548456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = ExtResource("2_c21nn")
+use_collision = true
+radius = 0.1
+height = 4.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

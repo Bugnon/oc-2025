@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dtex7jquuy8om"]
+
+[ext_resource type="Script" uid="uid://b8o5mcmojma7s" path="res://transition_fader.gd" id="1_5mael"]
+
+[node name="TransitionFader" type="CanvasLayer" unique_id=1608112553]
+layer = 2
+script = ExtResource("1_5mael")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=735772253]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

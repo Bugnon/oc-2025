@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c4ss8nac65lid"]
+
+[ext_resource type="PackedScene" uid="uid://b8xem1il0flkn" path="res://player.tscn" id="1_hbghi"]
+[ext_resource type="Script" uid="uid://d0to21yp5kpoo" path="res://world_boundary.gd" id="2_hn12h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6ksk5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5x3a6"]
+sky_material = SubResource("ProceduralSkyMaterial_6ksk5")
+
+[sub_resource type="Environment" id="Environment_ai7bx"]
+background_mode = 2
+sky = SubResource("Sky_5x3a6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_c5w0c"]
+
+[node name="Level1" type="Node3D" unique_id=1181140145]
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1673802458]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=77521223]
+environment = SubResource("Environment_ai7bx")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1494225944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(10, 1, 10)
+
+[node name="Player" parent="." unique_id=316900991 instance=ExtResource("1_hbghi")]
+
+[node name="Skeleton3D" parent="Player/Character/KayKit Animated Character" parent_id_path=PackedInt32Array(316900991, 1977922408, 2079053467) index="0" unique_id=1346154904]
+bones/0/rotation = Quaternion(-0.006366593, 0, 0, 0.99997973)
+bones/1/rotation = Quaternion(0.053730514, -3.294283e-26, -9.892346e-18, 0.99855554)
+bones/2/rotation = Quaternion(-0.6835203, -0.1823617, 0.68280524, -0.18254095)
+bones/4/rotation = Quaternion(-0.70208937, 0.29275486, 0.64641154, 0.059306175)
+
+[node name="WorldBoundary" type="Area3D" parent="." unique_id=1736609195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+script = ExtResource("2_hn12h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBoundary" unique_id=1253543391]
+shape = SubResource("WorldBoundaryShape3D_c5w0c")
+debug_color = Color(0.92156863, 0.16470589, 0.11764706, 0.41960785)
+debug_fill = false
+
+[connection signal="body_entered" from="WorldBoundary" to="WorldBoundary" method="_on_body_entered"]
+
+[editable path="Player"]
+[editable path="Player/Character"]

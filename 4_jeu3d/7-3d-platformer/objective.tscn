@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://8eiquxay13qy"]
+
+[ext_resource type="Script" uid="uid://d04uduq4e6lw5" path="res://objective.gd" id="1_05stc"]
+[ext_resource type="Texture2D" uid="uid://cju4yqhlfx0lo" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_n0a23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05stc"]
+albedo_texture = ExtResource("1_n0a23")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2eeh"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="Objective" type="Area3D" unique_id=83266856]
+script = ExtResource("1_05stc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1579817998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+size = Vector3(2, 0.2, 2)
+material = SubResource("StandardMaterial3D_05stc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1246194580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_u2eeh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
